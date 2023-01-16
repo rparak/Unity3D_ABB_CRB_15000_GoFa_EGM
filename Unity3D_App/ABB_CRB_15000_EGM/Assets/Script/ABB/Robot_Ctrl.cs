@@ -19,7 +19,7 @@ public class Robot_Ctrl : MonoBehaviour
         // Cartesian Space Limit:
         //  Position {X, Y, Z} (mm)
         public static float[,] C_Position_Limit = new float[3, 2];
-        //  Orientation (Euler Angles) {X, Y, Z} (°)
+        //  Orientation (Euler Angles) {X, Y, Z} (Â°)
         public static float[,] C_Orientation_Limit = new float[3, 2];
     }
 
@@ -30,12 +30,12 @@ public class Robot_Ctrl : MonoBehaviour
         // IP Port Number
         public static int port_number = 6511;
         // Joint Space:
-        //  Orientation {J1 .. J6} (°)
+        //  Orientation {J1 .. J6} (Â°)
         public static double[] J_Orientation = new double[6];
         // Cartesian Space:
         //  Position {X, Y, Z} (mm)
         public static double[] C_Position = new double[3];
-        //  Orientation (Euler Angles) {X, Y, Z} (°)
+        //  Orientation (Euler Angles) {X, Y, Z} (Â°)
         public static double[] C_Orientation = new double[3];
         // Class thread information (is alive or not)
         public static bool is_alive = false;
@@ -212,8 +212,6 @@ public class Robot_Ctrl : MonoBehaviour
             planned.SetCartesian(cartesian);
             // Bind planned to sensor object
             egm_s.SetPlanned(planned);
-
-            return;
         }
         public void Start()
         {
