@@ -22,13 +22,13 @@ Universal Windows Platform, Android
 
 ## Project Description:
 
-The project focuses on a simple demonstration of client-server communication via User Datagram Protocol (UDP), which is implemented in Unity3D. More precisely, it is the control of the robot by EGM (Externally Guided Motion). The application uses performance optimization using multi-threaded programming.
+The project focuses on a simple demonstration of client-server communication via User Datagram Protocol (UDP), which is implemented in Unity3D. More precisely, it is the control of the robot by EGM (Externally Guided Motion). The main idea is to control the Tool Center Point (TCP) of the robot (Translation, Rotation - Quaternion / Euler Angles) and collect data from the ABB into the Unity3D simulation to visualize the robot motion.
 
 The 3D parts of the robot were downloaded from the official ABB website here: [ABB Library](https://library.abb.com/)
 
 This solution can be used to control a real robot or to simulate one. The Unity3D Digital-Twin application has been tested on the ABB CRB GoFa robotic arm, both on real hardware and in simulation.
 
-The application can be installed on a mobile phone, tablet or computer, but for communication with the robot it is necessary to be in the same network.
+The application can be installed on a mobile phone, tablet or computer, but for communication with the robot it is necessary to be in the same network. The application uses performance optimization using multi-threaded programming.
 
 **Notes:**
 
