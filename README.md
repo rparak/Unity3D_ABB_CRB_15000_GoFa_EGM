@@ -24,6 +24,12 @@ Universal Windows Platform, Android
 
 Link: https://library.abb.com/
 
+The application uses performance optimization using multi-threaded programming.
+
+This solution can be used to control a real robot or to simulate one. The Unity3D Digital-Twin application has been tested on the ABB CRB GoFa robotic arm, both on real hardware and in simulation.
+
+The application can be installed on a mobile phone, tablet or computer, but for communication with the robot it is necessary to be in the same network.
+
 **Notes:**
 
 EGM (Externally Guided Motion) is an interface for ABB robots that allows smoothless control of the robotic arm from an external application (in our case it is a Unity3D developmentpPlatform ). The EGM can be used to transfer positions to the robot controller in either Joint/ Cartesian space. In our case it is the control of the robot using Cartesian coordinates.
