@@ -1,3 +1,28 @@
+/****************************************************************************
+MIT License
+Copyright(c) 2023 Roman Parak
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*****************************************************************************
+Author   : Roman Parak
+Email    : Roman.Parak @outlook.com
+Github   : https://github.com/rparak
+File Name: Robot_Ctrl.cs
+****************************************************************************/
+
 // System 
 using System;
 using System.Threading;
@@ -19,7 +44,7 @@ public class Robot_Ctrl : MonoBehaviour
         // Cartesian Space Limit:
         //  Position {X, Y, Z} (mm)
         public static float[,] C_Position_Limit = new float[3, 2];
-        //  Orientation (Euler Angles) {X, Y, Z} (°)
+        //  Orientation (Euler Angles) {X, Y, Z} (Â°)
         public static float[,] C_Orientation_Limit = new float[3, 2];
     }
 
@@ -30,12 +55,12 @@ public class Robot_Ctrl : MonoBehaviour
         // IP Port Number
         public static int port_number = 6511;
         // Joint Space:
-        //  Orientation {J1 .. J6} (°)
+        //  Orientation {J1 .. J6} (Â°)
         public static double[] J_Orientation = new double[6];
         // Cartesian Space:
         //  Position {X, Y, Z} (mm)
         public static double[] C_Position = new double[3];
-        //  Orientation (Euler Angles) {X, Y, Z} (°)
+        //  Orientation (Euler Angles) {X, Y, Z} (Â°)
         public static double[] C_Orientation = new double[3];
         // Class thread information (is alive or not)
         public static bool is_alive = false;
@@ -212,8 +237,6 @@ public class Robot_Ctrl : MonoBehaviour
             planned.SetCartesian(cartesian);
             // Bind planned to sensor object
             egm_s.SetPlanned(planned);
-
-            return;
         }
         public void Start()
         {
