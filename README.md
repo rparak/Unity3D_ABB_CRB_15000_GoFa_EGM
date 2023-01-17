@@ -61,8 +61,8 @@ Description:
 ```
 
 <p align="center">
-<img src="https://github.com/rparak/Unity3D_ABB_CRB_15000_EGM/blob/main/images/Unity3D_Scene.png" width="300" height=200">
-<img src="https://github.com/rparak/Unity3D_ABB_CRB_15000_EGM/blob/main/images/Unity3D_UI.png" width="300" height="200">
+<img src="https://github.com/rparak/Unity3D_ABB_CRB_15000_EGM/blob/main/images/Unity3D_Scene.png" width="375" height=225">
+<img src="https://github.com/rparak/Unity3D_ABB_CRB_15000_EGM/blob/main/images/Unity3D_UI.png" width="375" height="225">
 </p>
 
 
