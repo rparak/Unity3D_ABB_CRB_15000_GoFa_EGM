@@ -37,6 +37,10 @@ The Protobuf code generator can be used to generate code from a *.proto file int
 
 Link: [Protobuf Code Generator and Parser](https://protogen.marcgravell.com)
 
+<p align="center">
+<img src="https://github.com/rparak/Unity3D_ABB_CRB_15000_EGM/blob/main/images/ABB_RS_Unity3D.png" width="800" height="500">
+</p>
+
 ## Project Hierarchy:
 
 ```bash
