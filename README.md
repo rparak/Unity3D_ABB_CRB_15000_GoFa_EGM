@@ -28,7 +28,7 @@ The 3D parts of the robot were downloaded from the official ABB website here: [A
 
 This solution can be used to control a real robot or to simulate one. The Unity3D Digital-Twin application has been tested on the ABB CRB GoFa robotic arm, both on real hardware and in simulation.
 
-The application can be installed on a mobile phone, tablet or computer, but for communication with the robot it is necessary to be in the same network. The application uses performance optimization using multi-threaded programming.
+The application can be installed on a mobile phone, tablet or computer, but for communication with the robot it is necessary to be in the same network. The application uses performance optimization using multi-threaded programming. The High Definition Render Pipeline (HDRP) technology has been used for better graphics.
 
 **Notes:**
 
@@ -42,6 +42,8 @@ C:\Users\<user_name>\AppData\Local\ABB Industrial IT\Robotics IT\RobotWare\Robot
 The Protobuf code generator can be used to generate code from a *.proto file into individual programming languages.
 
 Link: [Protobuf Code Generator and Parser](https://protogen.marcgravell.com)
+
+**Warning: RobotWare version 7.6.1 or lower must be used.**
 
 <p align="center">
 <img src="https://github.com/rparak/Unity3D_ABB_CRB_15000_EGM/blob/main/images/ABB_RS_Unity3D.png" width="800" height="500">
