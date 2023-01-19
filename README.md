@@ -51,7 +51,7 @@ Link: [Protobuf Code Generator and Parser](https://protogen.marcgravell.com)
 <img src="https://github.com/rparak/Unity3D_ABB_CRB_15000_EGM/blob/main/images/ABB_RS_Unity3D.png" width="800" height="500">
 </p>
 
-**Unpacking a station (/RSPAG/Method_{1,2}/*.rspag):**
+**Unpacking a station (*.rspag):**
 1. On the File tab, click Open and then browse to the folder and select the Pack&Go file, the Unpack & Work wizard opens.
 2. In the Welcome to the Unpack & Work Wizard page, click Next.
 3. In the Select package page, click Browse and then select the Pack & Go file to unpack and the Target folder. Click Next.
