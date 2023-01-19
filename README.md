@@ -32,6 +32,8 @@ The application can be installed on a mobile phone, tablet or computer, but for 
 
 **WARNING: RobotWare version 7.6.1 or lower must be used.**
 
+The project was realized at the Institute of Automation and Computer Science, Brno University of Technology, Faculty of Mechanical Engineering (NETME Centre - Cybernetics and Robotics Division) in cooperation with Novota-Art.
+
 **Notes:**
 
 EGM (Externally Guided Motion) is an interface for ABB robots that allows smoothless control of the robotic arm from an external application (in our case it is a Unity3D developmentpPlatform ). The EGM can be used to transfer positions to the robot controller in either Joint/ Cartesian space. In our case it is the control of the robot using Cartesian coordinates.
