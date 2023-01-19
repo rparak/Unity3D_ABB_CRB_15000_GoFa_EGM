@@ -30,6 +30,8 @@ This solution can be used to control a real robot or to simulate one. The Unity3
 
 The application can be installed on a mobile phone, tablet or computer, but for communication with the robot it is necessary to be in the same network. The application uses performance optimization using multi-threaded programming. The High Definition Render Pipeline (HDRP) technology has been used for better graphics.
 
+**WARNING: RobotWare version 7.6.1 or lower must be used.**
+
 **Notes:**
 
 EGM (Externally Guided Motion) is an interface for ABB robots that allows smoothless control of the robotic arm from an external application (in our case it is a Unity3D developmentpPlatform ). The EGM can be used to transfer positions to the robot controller in either Joint/ Cartesian space. In our case it is the control of the robot using Cartesian coordinates.
@@ -42,8 +44,6 @@ C:\Users\<user_name>\AppData\Local\ABB Industrial IT\Robotics IT\RobotWare\Robot
 The Protobuf code generator can be used to generate code from a *.proto file into individual programming languages.
 
 Link: [Protobuf Code Generator and Parser](https://protogen.marcgravell.com)
-
-**Warning: RobotWare version 7.6.1 or lower must be used.**
 
 <p align="center">
 <img src="https://github.com/rparak/Unity3D_ABB_CRB_15000_EGM/blob/main/images/ABB_RS_Unity3D.png" width="800" height="500">
