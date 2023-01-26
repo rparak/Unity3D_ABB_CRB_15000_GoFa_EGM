@@ -26,6 +26,8 @@ The project focuses on a simple demonstration of client-server communication via
 
 The 3D parts of the robot were downloaded from the official ABB website here: [ABB Library](https://library.abb.com/)
 
+Co-act EGP-C 40-N-N-GoFa - https://schunk.com/vn/en/gripping-systems/parallel-gripper/co-act-egp-c/co-act-egp-c-40-n-n-gofa/p/000000000001468548
+
 This solution can be used to control a real robot or to simulate one. The Unity3D Digital-Twin application has been tested on the ABB CRB GoFa robotic arm, both on real hardware and in simulation.
 
 The application can be installed on a mobile phone, tablet or computer, but for communication with the robot it is necessary to be in the same network. The application uses performance optimization using multi-threaded programming. The High Definition Render Pipeline (HDRP) technology has been used for better graphics.
