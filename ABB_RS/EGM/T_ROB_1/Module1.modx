@@ -22,10 +22,10 @@ MODULE Module1
     ! Externally Guided motion (EGM): Control - Main Cycle !
     PROC Main()
         ! Move to the starting position
-        MoveL [[CENTER_POSITION{1}, CENTER_POSITION{2}, CENTER_POSITION{3}],[0.0,0.0,1.0,0.0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]], v100, fine, tool0\WObj:=wobj0;
+        MoveJ [[CENTER_POSITION{1}, CENTER_POSITION{2}, CENTER_POSITION{3}],[0.0,0.0,1.0,0.0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]], v100, fine, tool0\WObj:=wobj0;
             
         ! EGM Cartesian Control
-        EGM_CARTESIAN_CONTROL;
+        !EGM_CARTESIAN_CONTROL;
     ENDPROC
     
     PROC EGM_CARTESIAN_CONTROL()
@@ -36,12 +36,13 @@ MODULE Module1
         EGMGetId egm_id;
             
         ! Setup the EGM communication
-        EGMSetupUC ROB_1, egm_id, "default", "ROB_1", \Pose; 
+        EGMSetupUC ROB_1, egm_id, "default", "ROB_1", \Pose;
             
         ! EGM While {Cartesian}
         WHILE TRUE DO
             ! Prepare for an EGM communication session
-            EGMActPose egm_id, 
+            EGMActPose egm_id,
+                       \Tool:=tool0,
                        \WObj:=egm_wobj,
                        egm_correction_frame,
                        EGM_FRAME_BASE,
@@ -59,7 +60,7 @@ MODULE Module1
                        \MaxSpeedDeviation:=1000;
                         
             ! Start the EGM communication session
-            EGMRunPose egm_id, EGM_STOP_HOLD, \X \Y \Z \Rx \Ry \Rz \CondTime:=0.1 \RampInTime:=0.1 \RampOutTime:=0.1 \PosCorrGain:=1.0;
+            EGMRunPose egm_id, EGM_STOP_HOLD, \X \Y \Z \Rx \Ry \Rz \CondTime:=1.0 \RampInTime:=0.1 \RampOutTime:=0.1 \PosCorrGain:=1.0;
             
             ! Release the EGM id
             !EGMReset egm_id;
