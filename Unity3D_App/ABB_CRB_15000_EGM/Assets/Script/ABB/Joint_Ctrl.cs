@@ -30,6 +30,7 @@ using UnityEngine;
 using Debug = UnityEngine.Debug;
 
 using static Robot_Ctrl;
+
 public class Joint_Ctrl : MonoBehaviour
 {
     // Controlled joint index

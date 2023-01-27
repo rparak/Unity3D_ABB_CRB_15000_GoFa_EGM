@@ -29,11 +29,14 @@ using System.Threading;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
+using System.Text;
+using System.Diagnostics;
 // Unity
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 // ABB EGM Lib.
 using abb.egm;
+
 
 public class Robot_Ctrl : MonoBehaviour
 {
@@ -52,8 +55,7 @@ public class Robot_Ctrl : MonoBehaviour
     {
         // IP Port Number and IP Address
         public static string ip_address;
-        // IP Port Number
-        public static int port_number = 6511;
+        public static readonly int port_number = 6511;
         // Joint Space:
         //  Orientation {J1 .. J6} (°)
         public static double[] J_Orientation = new double[6];
@@ -66,8 +68,28 @@ public class Robot_Ctrl : MonoBehaviour
         public static bool is_alive = false;
     }
 
+    public static class ABB_TCP_Control
+    {
+        // IP Port Number and IP Address
+        public static string ip_address;
+        public static readonly int port_number = 6061;
+        // End-effector:
+        //  Open: Grasp, Close: Release
+        public static int EE_Open, EE_Close;
+        //  Configuration
+        public static int EE_Config;
+        //  Stream Data
+        public static string EE_Stream_Data;
+        // Class thread information (is alive or not)
+        public static bool is_alive = false;
+        // Comunication Speed (ms)
+        public static readonly int time_step = 100;
+    }
+
     // Class Control Robot {ABB Externally Guided Motion - EGM}
     private Egm_Control ABB_EGM_Control_Cls = new Egm_Control();
+    // Class Control Robot End-Effector (Transmission Control Protocol/Internet Protocol - TCP/IP)
+    private TCPIP_Control ABB_TCP_Control_Cls = new TCPIP_Control();
 
     // Other variables
     private int main_state_ctrl_egm = 0;
@@ -99,8 +121,10 @@ public class Robot_Ctrl : MonoBehaviour
                     // ------------------------ Wait State {Disconnect State} ------------------------//
                     if (GlobalVariables_Main_Control.Connect == true)
                     {
-                        //Start Stream {ABB Externally Guided Motion - EGM}
+                        // Start Stream {ABB Externally Guided Motion - EGM}
                         ABB_EGM_Control_Cls.Start();
+                        // Start Control {Transmission Control Protocol/Internet Protocol - TCP/IP}
+                        ABB_TCP_Control_Cls.Start();
 
                         // go to connect state
                         main_state_ctrl_egm = 1;
@@ -115,13 +139,19 @@ public class Robot_Ctrl : MonoBehaviour
                     // ------------------------ Data Processing State {Connect State} ------------------------//
                     if (GlobalVariables_Main_Control.Disconnect == true)
                     {
-                        // Stop threading block {ABB Externally Guided Motion - EGM}
+                        // Stop threading block
+                        //  {ABB Externally Guided Motion - EGM}
                         if (ABB_EGM_Control.is_alive == true)
                         {
                             ABB_EGM_Control_Cls.Stop();
                         }
+                        //  {Transmission Control Protocol/Internet Protocol - TCP/IP}
+                        if (ABB_TCP_Control.is_alive == true)
+                        {
+                            ABB_TCP_Control_Cls.Stop();
+                        }
 
-                        if (ABB_EGM_Control.is_alive == false)
+                        if (ABB_EGM_Control.is_alive == false && ABB_TCP_Control.is_alive == false)
                         {
                             // go to initialization state {wait state -> disconnect state}
                             main_state_ctrl_egm = 0;
@@ -138,6 +168,8 @@ public class Robot_Ctrl : MonoBehaviour
         {
             // Destroy Control Robot {ABB Externally Guided Motion - EGM}
             ABB_EGM_Control_Cls.Destroy();
+            // Destroy Control Robot End-Effector {Transmission Control Protocol/Internet Protocol - TCP/IP}
+            ABB_TCP_Control_Cls.Destroy();
 
             Destroy(this);
         }
@@ -202,6 +234,9 @@ public class Robot_Ctrl : MonoBehaviour
                     }
                 }
             }
+
+            // Dispose the instance and terminate the UDP connection
+            udp_client.Close();
         }
         void EMG_Sensor_Message(EgmSensor.Builder egm_s)
         {
@@ -250,18 +285,96 @@ public class Robot_Ctrl : MonoBehaviour
         }
         public void Stop()
         {
+            // Dispose the instance and terminate the TCP/IP connection
+            udp_client.Close();
+
             // Stop and exit thread
             exit_thread = true;
             sensor_thread.Abort();
             Thread.Sleep(100);
             ABB_EGM_Control.is_alive = sensor_thread.IsAlive;
-            sensor_thread.Abort();
         }
         public void Destroy()
         {
             // Stop a thread (Robot Web Services communication)
             Stop();
             Thread.Sleep(100);
+        }
+    }
+
+    class TCPIP_Control
+    {
+        private Thread ctrl_thread = null;
+        private NetworkStream network_stream = null;
+        private TcpClient client = null;
+        private bool exit_thread = false;
+
+        public void TCPIP_Control_Thread()
+        {
+            // Initialization timer
+            var t = new Stopwatch();
+
+            while (exit_thread == false)
+            {
+                // t_{0}: Timer start.
+                t.Start();
+
+                // Initialization of the TCP/IP Client
+                client = new TcpClient(ABB_TCP_Control.ip_address, ABB_TCP_Control.port_number);
+
+                using (network_stream = client.GetStream())
+                {
+                    // Send message to the ABB ROBOT End-Effector {TCP/IP}
+                    byte[] raw_send_data = ASCIIEncoding.ASCII.GetBytes("[1.0," + ABB_TCP_Control.EE_Open.ToString() + "," + ABB_TCP_Control.EE_Close.ToString() + "]");
+                    network_stream.Write(raw_send_data, 0, raw_send_data.Length);
+
+                    // Get the data from the robot
+                    byte[] raw_receive_data = new byte[client.ReceiveBufferSize];
+                    int r_data = network_stream.Read(raw_receive_data, 0, client.ReceiveBufferSize);
+                    ABB_TCP_Control.EE_Stream_Data = Encoding.ASCII.GetString(raw_receive_data, 0, r_data);
+                }
+
+                // Dispose the instance and terminate the TCP/IP connection
+                client.Close();
+
+                // t_{1}: Timer stop.
+                t.Stop();
+
+                // Recalculate the time: t = t_{1} - t_{0} -> Elapsed Time in milliseconds
+                if (t.ElapsedMilliseconds < ABB_TCP_Control.time_step)
+                {
+                    Thread.Sleep(ABB_TCP_Control.time_step - (int)t.ElapsedMilliseconds);
+                }
+
+                // Reset (Restart) timer.
+                t.Restart();
+            }
+        }
+        public void Start()
+        {
+            exit_thread = false;
+            // Start a thread and listen to incoming messages
+            ctrl_thread = new Thread(new ThreadStart(TCPIP_Control_Thread));
+            ctrl_thread.IsBackground = true;
+            ctrl_thread.Start();
+            // Thread is active
+            ABB_TCP_Control.is_alive = true;
+        }
+        public void Stop()
+        {
+            // Dispose the instance and terminate the TCP/IP connection
+            client.Close();
+
+            // Stop and exit thread
+            exit_thread = true;
+            ctrl_thread.Abort();
+            Thread.Sleep(100);
+            ABB_TCP_Control.is_alive = ctrl_thread.IsAlive;
+        }
+        public void Destroy()
+        {
+            // Stop a thread (Robot Web Services communication)
+            Stop();
         }
     }
 }

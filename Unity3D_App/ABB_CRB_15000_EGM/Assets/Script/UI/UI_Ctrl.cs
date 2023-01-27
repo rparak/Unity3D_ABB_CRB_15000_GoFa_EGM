@@ -48,10 +48,24 @@ public class UI_Ctrl : MonoBehaviour
     // Slider
     public Slider[] C_Position = new Slider[3];
     public Slider[] C_Orientation = new Slider[3];
+    // Toggle
+    public Toggle Viewpoint_Visibility;
+    // GameObject
+    public GameObject Viewpoint_EE_0;
+    public GameObject Viewpoint_EE_SCHUNK;
+    public GameObject EE_SCHUNK;
+    // Dropdown
+    public TMP_Dropdown EE_Configuration;
+    // Float
+    //  Velocity of each robot control parameter: value is modified
+    //  by the function (Mathf.SmoothDamp)
+    private float[] C_Pos_Current_Vel = new float[3];
+    private float[] C_Orient_Current_Vel = new float[3];
 
     // Other variables
-    public double[] C_Orientation_tmp = new double[3];
-    public static readonly double[] C_Orientation_Offset = new double[3] { 180.0, 0.0, 180.0};
+    private double[] C_Orientation_tmp = new double[3];
+    private static readonly double[] C_Orientation_Offset = new double[3] { 180.0, 0.0, 180.0};
+    private static readonly float smooth_time = 0.1f;
 
     // Start is called before the first frame update
     void Start()
@@ -72,6 +86,14 @@ public class UI_Ctrl : MonoBehaviour
 
         // Robot IP Address
         ip_address_txt.text = "127.0.0.1";
+
+        // Visibility of the robot's end effector viewpoint
+        Viewpoint_Visibility.isOn = false;
+
+        // End-Effector Configuration:
+        //  0 - without end-effector
+        //  1 - with predefined end-effector
+        EE_Configuration.value = 0;
 
         // Slider:
         //  Set Min/Max limits: Position in metres
@@ -94,11 +116,15 @@ public class UI_Ctrl : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        // Read IP Address of the robot
+        // Read Variables:
+        //  IP Address of the robot
         ABB_EGM_Control.ip_address = ip_address_txt.text;
+        ABB_TCP_Control.ip_address = ip_address_txt.text;
+        //  End-Effector Configuration
+        ABB_TCP_Control.EE_Config = EE_Configuration.value;
 
-        // ------------------------ Connection Information ------------------------//
-        // If the button (connect/disconnect) is pressed, change the color and text
+        // Connection Information
+        //  If the button (connect/disconnect) is pressed, change the color and text
         if (GlobalVariables_Main_Control.Is_Connected == true)
         {
             // green color
@@ -114,26 +140,62 @@ public class UI_Ctrl : MonoBehaviour
 
         // Cyclic read-write parameters to the robot
         // Position {Cartesian} -> X..Z
-        ABB_EGM_Control.C_Position[0] = Math.Round(C_Position[0].value, 0);
-        ABB_EGM_Control.C_Position[1] = Math.Round(C_Position[1].value, 0);
-        ABB_EGM_Control.C_Position[2] = Math.Round(C_Position[2].value, 0);
+        ABB_EGM_Control.C_Position[0] = Mathf.SmoothDamp((float)ABB_EGM_Control.C_Position[0], C_Position[0].value, ref C_Pos_Current_Vel[0], smooth_time);
+        ABB_EGM_Control.C_Position[1] = Mathf.SmoothDamp((float)ABB_EGM_Control.C_Position[1], C_Position[1].value, ref C_Pos_Current_Vel[1], smooth_time);
+        ABB_EGM_Control.C_Position[2] = Mathf.SmoothDamp((float)ABB_EGM_Control.C_Position[2], C_Position[2].value, ref C_Pos_Current_Vel[2], smooth_time);
+
         // Rotation {Euler Angles} -> RX..RZ
-        C_Orientation_tmp[0] = Math.Round(C_Orientation[0].value, 0);
+        C_Orientation_tmp[0] = Mathf.SmoothDamp((float)C_Orientation_tmp[0], C_Orientation[0].value, ref C_Orient_Current_Vel[0], smooth_time);
         ABB_EGM_Control.C_Orientation[0] = C_Orientation_tmp[0] > 0.0 ? (-1) * (C_Orientation_Offset[0] - C_Orientation_tmp[0]) : C_Orientation_Offset[0] + C_Orientation_tmp[0];
-        C_Orientation_tmp[1] = Math.Round(C_Orientation[1].value, 0);
+        C_Orientation_tmp[1] = Mathf.SmoothDamp((float)C_Orientation_tmp[1], C_Orientation[1].value, ref C_Orient_Current_Vel[1], smooth_time);
         ABB_EGM_Control.C_Orientation[1] = C_Orientation_tmp[1] > 0.0 ? (-1) * (C_Orientation_Offset[1] - C_Orientation_tmp[1]) : C_Orientation_Offset[1] + C_Orientation_tmp[1];
-        C_Orientation_tmp[2] = Math.Round(C_Orientation[2].value, 0);
+        C_Orientation_tmp[2] = Mathf.SmoothDamp((float)C_Orientation_tmp[2], C_Orientation[2].value, ref C_Orient_Current_Vel[2], smooth_time);
         ABB_EGM_Control.C_Orientation[2] = C_Orientation_tmp[2] > 0.0 ? (-1) * (C_Orientation_Offset[2] - C_Orientation_tmp[2]) : C_Orientation_Offset[2] + C_Orientation_tmp[2];
 
         // Cyclic read-write parameters to text info
         // Position {Cartesian} -> X..Z
-        position_x_txt.text = ABB_EGM_Control.C_Position[0].ToString();
-        position_y_txt.text = ABB_EGM_Control.C_Position[1].ToString();
-        position_z_txt.text = ABB_EGM_Control.C_Position[2].ToString();
+        position_x_txt.text = Math.Round(ABB_EGM_Control.C_Position[0], 0).ToString();
+        position_y_txt.text = Math.Round(ABB_EGM_Control.C_Position[1], 0).ToString();
+        position_z_txt.text = Math.Round(ABB_EGM_Control.C_Position[2], 0).ToString();
         // Rotation {Euler Angles} -> RX..RZ
-        rotation_x_txt.text = ABB_EGM_Control.C_Orientation[0].ToString();
-        rotation_y_txt.text = ABB_EGM_Control.C_Orientation[1].ToString();
-        rotation_z_txt.text = ABB_EGM_Control.C_Orientation[2].ToString();
+        rotation_x_txt.text = Math.Round(ABB_EGM_Control.C_Orientation[0], 0).ToString();
+        rotation_y_txt.text = Math.Round(ABB_EGM_Control.C_Orientation[1], 0).ToString();
+        rotation_z_txt.text = Math.Round(ABB_EGM_Control.C_Orientation[2], 0).ToString();
+
+
+        // Configuration of the robot end-effector visualization in the scene
+        switch (ABB_TCP_Control.EE_Config)
+        {
+            case 0:
+                {
+                    // End-Effector Configuration: 
+                    //  0 - without end-effector
+                    EE_SCHUNK.SetActive(false);
+
+                    if (Viewpoint_Visibility.isOn == true)
+                        Viewpoint_EE_0.SetActive(true);
+                    else
+                        Viewpoint_EE_0.SetActive(false);
+
+                    Viewpoint_EE_SCHUNK.SetActive(false);
+                }
+                break;
+
+            case 1:
+                {
+                    // End-Effector Configuration:
+                    //  1 - with predefined end-effector
+                    EE_SCHUNK.SetActive(true);
+
+                    if (Viewpoint_Visibility.isOn == true)
+                        Viewpoint_EE_SCHUNK.SetActive(true);
+                    else
+                        Viewpoint_EE_SCHUNK.SetActive(false);
+
+                    Viewpoint_EE_0.SetActive(false);
+                }
+                break;
+        }
     }
 
     void OnApplicationQuit()
@@ -158,5 +220,17 @@ public class UI_Ctrl : MonoBehaviour
     {
         GlobalVariables_Main_Control.Connect = false;
         GlobalVariables_Main_Control.Disconnect = true;
+    }
+
+    public void TaskOnClick_EE_Open_BTN()
+    {
+        ABB_TCP_Control.EE_Open = 1;
+        ABB_TCP_Control.EE_Close = 0;
+    }
+
+    public void TaskOnClick_EE_Close_BTN()
+    {
+        ABB_TCP_Control.EE_Open = 0;
+        ABB_TCP_Control.EE_Close = 1;
     }
 }
