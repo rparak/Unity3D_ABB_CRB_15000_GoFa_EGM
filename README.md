@@ -22,7 +22,7 @@ Universal Windows Platform, Android
 
 ## Project Description:
 
-The project focuses on a simple demonstration of client-server communication via User Datagram Protocol (UDP), which is implemented in Unity3D. More precisely, it is the control of the robot by EGM (Externally Guided Motion). The main idea is to control the Tool Center Point (TCP) of the robot (Translation, Rotation - Quaternion / Euler Angles) and collect data from the ABB into the Unity3D simulation to visualize the robot motion.
+The project focuses on a simple demonstration of client-server communication via User Datagram Protocol (UDP), which is implemented in Unity3D. More precisely, it is the control of the robot by EGM (Externally Guided Motion). The main idea is to control the Tool Center Point (TCP) of the robot (Translation, Rotation - Quaternion / Euler Angles) and collect data from the ABB into the Unity3D simulation to visualize the robot motion. An additional feature of the project is the control of the SCHUNK end-effector via TCP/IP, which is also implemented in Unity3D.
 
 The 3D parts of the robot were downloaded from the official ABB website here: [ABB Library](https://library.abb.com/)
 
@@ -70,7 +70,7 @@ Link: [Protobuf Code Generator and Parser](https://protogen.marcgravell.com)
 ```bash
 [/CAD/]
 Description:
-  3D models of individual parts of the robot.
+  3D models of the individual parts of the robot and the end-effector.
 
 [/Blender/]
 Description:
@@ -78,7 +78,7 @@ Description:
   
 [/ABB_RS/]
 Description:
-  The main ABB RobotStudio project for robot control via EGM. The folder also contains the RS project for verification of the robot workspace.
+  The main ABB RobotStudio project for robot control via EGM (with and without end effector control via TCP/IP). The folder also contains the RS project for verification of the robot workspace.
   
 [/Unity3D_App/ABB_CRB_15000_EGM]
 Description:
