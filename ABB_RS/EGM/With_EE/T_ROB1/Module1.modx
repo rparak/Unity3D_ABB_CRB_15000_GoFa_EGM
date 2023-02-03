@@ -32,9 +32,9 @@ MODULE Module1
     ! The work object. Base Frame
     LOCAL PERS wobjdata egm_wobj := [FALSE, TRUE, "", [[0.0, 0.0, 0.0],[1.0, 0.0, 0.0, 0.0]], [[0.0, 0.0, 0.0],[1.0, 0.0, 0.0, 0.0]]];
     ! Limits for convergence
-    ! Cartesian: +-1 mm
+    ! Cartesian: +-0.1 mm
     LOCAL CONST egm_minmax egm_condition_cartesian := [-0.1, 0.1];
-    ! Orientation: +-1 degrees
+    ! Orientation: +-0.1 degrees
     LOCAL CONST egm_minmax egm_condition_orient := [-0.1, 0.1];
     
     ! Center Position

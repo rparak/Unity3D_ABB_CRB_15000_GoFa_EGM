@@ -32,9 +32,9 @@ MODULE Module1
     ! The work object. Base Frame
     LOCAL PERS wobjdata egm_wobj := [FALSE, TRUE, "", [[0.0, 0.0, 0.0],[1.0, 0.0, 0.0, 0.0]], [[0.0, 0.0, 0.0],[1.0, 0.0, 0.0, 0.0]]];
     ! Limits for convergence
-    ! Cartesian: +-1 mm
+    ! Cartesian: +-0.1 mm
     LOCAL CONST egm_minmax egm_condition_cartesian := [-0.1, 0.1];
-    ! Orientation: +-1 degrees
+    ! Orientation: +-0.1 degrees
     LOCAL CONST egm_minmax egm_condition_orient := [-0.1, 0.1];
     
     ! Center Position
@@ -50,7 +50,7 @@ MODULE Module1
         !       Example: MoveL Target_Auxiliary,v100,fine,CONST_EE_TOOL_EGP_C_40\WObj:=wobj0;
         
         ! Move to the starting position
-        MoveJ [[CENTER_POSITION{1}, CENTER_POSITION{2}, CENTER_POSITION{3}],[0.0,0.0,1.0,0.0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]], v100, fine, tool0\WObj:=wobj0;
+        MoveJ [[CENTER_POSITION{1}, CENTER_POSITION{2}, CENTER_POSITION{3}],[0.0,0.0,1.0,0.0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]], v100, fine, CONST_EE_TOOL_EGP_C_40\WObj:=wobj0;
             
         ! EGM Cartesian Control
         EGM_CARTESIAN_CONTROL;
@@ -70,7 +70,7 @@ MODULE Module1
         WHILE TRUE DO
             ! Prepare for an EGM communication session
             EGMActPose egm_id,
-                       \Tool:=tool0,
+                       \Tool:=CONST_EE_TOOL_EGP_C_40,
                        \WObj:=egm_wobj,
                        egm_correction_frame,
                        EGM_FRAME_BASE,
