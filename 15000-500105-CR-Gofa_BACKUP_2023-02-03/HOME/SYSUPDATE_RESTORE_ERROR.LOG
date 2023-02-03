@@ -1,0 +1,160 @@
+Tool:	elog
+Version:	2.0
+Date:	2022-01-14 10:22:32
+System Name:	/user
+RobotWare:	7.5.0
+RobotControl:	7.5.0
+Controller Name:	15000-500105-CR-Gofa
+Controller Id:	15000-500105
+
+
+
+Common log messages
+SeqNo     	Type	Category            	Code    	Title     	Date                		Description		Arguments	
+67        	E		Common              	12134   	<title>   	2022-01-14 10:22:32:511784	<description>	{args: "1", "-84", "248"}
+66        	E		Common              	71405   	<title>   	2022-01-14 10:22:32:509676	<description>	{args: "EGP_IS_CLOSE_1", "ManFSReqTPU"}
+65        	I		Common              	10250   	<title>   	2022-01-14 10:22:25:899589	<description>	{args: "0"}
+64        	I		Common              	10129   	<title>   	2022-01-14 10:22:24:134730	<description>	{args: "2", "T_ROB1"}
+63        	I		Common              	10150   	<title>   	2022-01-14 10:22:23:960999	<description>	{args: "3", "T_GOFA_LED"}
+62        	I		Common              	10150   	<title>   	2022-01-14 10:22:23:960840	<description>	{args: "1", "SC_CBC"}
+61        	I		Common              	10129   	<title>   	2022-01-14 10:22:23:960387	<description>	{args: "3", "T_GOFA_LED"}
+60        	I		Common              	10002   	<title>   	2022-01-14 10:22:23:948044	<description>	{args: "2", "0", "T_ROB1"}
+59        	I		Common              	10129   	<title>   	2022-01-14 10:22:23:947817	<description>	{args: "1", "SC_CBC"}
+58        	I		Common              	10150   	<title>   	2022-01-14 10:22:23:946113	<description>	{args: "3", "T_GOFA_LED"}
+57        	I		Common              	10150   	<title>   	2022-01-14 10:22:23:945923	<description>	{args: "2", "T_ROB1"}
+56        	I		Common              	10150   	<title>   	2022-01-14 10:22:23:938015	<description>	{args: "1", "SC_CBC"}
+55        	I		Common              	10015   	<title>   	2022-01-14 10:22:23:921698	<description>	
+54        	I		Common              	10012   	<title>   	2022-01-14 10:22:23:913933	<description>	
+53        	I		Common              	10002   	<title>   	2022-01-14 10:22:22:244138	<description>	{args: "3", "0", "T_GOFA_LED"}
+52        	I		Common              	10002   	<title>   	2022-01-14 10:22:22:222726	<description>	{args: "2", "0", "T_ROB1"}
+51        	I		Common              	10002   	<title>   	2022-01-14 10:22:22:210970	<description>	{args: "1", "0", "SC_CBC"}
+50        	E		Common              	90542   	<title>   	2022-01-14 10:22:22:184167	<description>	{args: "1"}
+32        	E		Common              	34337   	<title>   	2022-01-14 10:22:12:770499	<description>	{args: "1", "rob1_3", "3", "1"}
+31        	W		Common              	50494   	<title>   	2022-01-14 10:22:09:115311	<description>	
+30        	I		Common              	91038   	<title>   	2022-01-14 10:22:09:100334	<description>	{args: "1", "6"}
+28        	I		Common              	91038   	<title>   	2022-01-14 10:22:09:035712	<description>	{args: "1", "5"}
+26        	W		Common              	34435   	<title>   	2022-01-14 10:22:09:025630	<description>	{args: "1", "5"}
+25        	I		Common              	91038   	<title>   	2022-01-14 10:22:09:019440	<description>	{args: "1", "4"}
+23        	I		Common              	91038   	<title>   	2022-01-14 10:22:09:009952	<description>	{args: "1", "3"}
+21        	W		Common              	34435   	<title>   	2022-01-14 10:22:08:999532	<description>	{args: "1", "3"}
+20        	I		Common              	91038   	<title>   	2022-01-14 10:22:08:996431	<description>	{args: "1", "2"}
+18        	W		Common              	34435   	<title>   	2022-01-14 10:22:08:988011	<description>	{args: "1", "2"}
+17        	I		Common              	91038   	<title>   	2022-01-14 10:22:08:982096	<description>	{args: "1", "1"}
+15        	W		Common              	34435   	<title>   	2022-01-14 10:22:08:960278	<description>	{args: "1", "1"}
+14        	E		Common              	50242   	<title>   	2022-01-14 10:22:08:949235	<description>	{args: "rob1_3"}
+13        	E		Common              	71301   	<title>   	2022-01-14 10:22:07:400304	<description>	
+12        	W		Common              	71605   	<title>   	2022-01-14 10:22:07:104490	<description>	
+11        	W		Common              	71604   	<title>   	2022-01-14 10:22:07:101754	<description>	
+10        	I		Common              	36505   	<title>   	2022-01-14 10:22:06:902471	<description>	{args: "3G"}
+9         	I		Common              	10045   	<title>   	2022-01-14 10:22:04:382957	<description>	
+8         	I		Common              	10056   	<title>   	2022-01-14 10:21:11:911896	<description>	
+5         	I		Common              	36505   	<title>   	2022-01-14 10:20:47:687116	<description>	{args: "3G"}
+4         	I		Common              	10045   	<title>   	2022-01-14 10:20:36:088011	<description>	
+3         	I		Common              	10056   	<title>   	2022-01-14 10:12:24:734788	<description>	
+2         	I		Common              	10046   	<title>   	2022-01-14 10:12:05:357060	<description>	
+1         	I		Common              	10452   	<title>   	2022-01-14 10:12:05:357015	<description>	
+
+Operational log messages
+SeqNo     	Type	Category            	Code    	Title     	Date                		Description		Arguments	
+67        	E		Operational         	12134   	<title>   	2022-01-14 10:22:32:511784	<description>	{args: "1", "-84", "248"}
+65        	I		Operational         	10250   	<title>   	2022-01-14 10:22:25:899589	<description>	{args: "0"}
+64        	I		Operational         	10129   	<title>   	2022-01-14 10:22:24:134730	<description>	{args: "2", "T_ROB1"}
+63        	I		Operational         	10150   	<title>   	2022-01-14 10:22:23:960999	<description>	{args: "3", "T_GOFA_LED"}
+62        	I		Operational         	10150   	<title>   	2022-01-14 10:22:23:960840	<description>	{args: "1", "SC_CBC"}
+61        	I		Operational         	10129   	<title>   	2022-01-14 10:22:23:960387	<description>	{args: "3", "T_GOFA_LED"}
+60        	I		Operational         	10002   	<title>   	2022-01-14 10:22:23:948044	<description>	{args: "2", "0", "T_ROB1"}
+59        	I		Operational         	10129   	<title>   	2022-01-14 10:22:23:947817	<description>	{args: "1", "SC_CBC"}
+58        	I		Operational         	10150   	<title>   	2022-01-14 10:22:23:946113	<description>	{args: "3", "T_GOFA_LED"}
+57        	I		Operational         	10150   	<title>   	2022-01-14 10:22:23:945923	<description>	{args: "2", "T_ROB1"}
+56        	I		Operational         	10150   	<title>   	2022-01-14 10:22:23:938015	<description>	{args: "1", "SC_CBC"}
+55        	I		Operational         	10015   	<title>   	2022-01-14 10:22:23:921698	<description>	
+54        	I		Operational         	10012   	<title>   	2022-01-14 10:22:23:913933	<description>	
+53        	I		Operational         	10002   	<title>   	2022-01-14 10:22:22:244138	<description>	{args: "3", "0", "T_GOFA_LED"}
+52        	I		Operational         	10002   	<title>   	2022-01-14 10:22:22:222726	<description>	{args: "2", "0", "T_ROB1"}
+51        	I		Operational         	10002   	<title>   	2022-01-14 10:22:22:210970	<description>	{args: "1", "0", "SC_CBC"}
+9         	I		Operational         	10045   	<title>   	2022-01-14 10:22:04:382957	<description>	
+8         	I		Operational         	10056   	<title>   	2022-01-14 10:21:11:911896	<description>	
+4         	I		Operational         	10045   	<title>   	2022-01-14 10:20:36:088011	<description>	
+3         	I		Operational         	10056   	<title>   	2022-01-14 10:12:24:734788	<description>	
+
+System log messages
+SeqNo     	Type	Category            	Code    	Title     	Date                		Description		Arguments	
+
+Hardware log messages
+SeqNo     	Type	Category            	Code    	Title     	Date                		Description		Arguments	
+32        	E		Hardware            	34337   	<title>   	2022-01-14 10:22:12:770499	<description>	{args: "1", "rob1_3", "3", "1"}
+26        	W		Hardware            	34435   	<title>   	2022-01-14 10:22:09:025630	<description>	{args: "1", "5"}
+21        	W		Hardware            	34435   	<title>   	2022-01-14 10:22:08:999532	<description>	{args: "1", "3"}
+18        	W		Hardware            	34435   	<title>   	2022-01-14 10:22:08:988011	<description>	{args: "1", "2"}
+15        	W		Hardware            	34435   	<title>   	2022-01-14 10:22:08:960278	<description>	{args: "1", "1"}
+10        	I		Hardware            	36505   	<title>   	2022-01-14 10:22:06:902471	<description>	{args: "3G"}
+5         	I		Hardware            	36505   	<title>   	2022-01-14 10:20:47:687116	<description>	{args: "3G"}
+
+Program log messages
+SeqNo     	Type	Category            	Code    	Title     	Date                		Description		Arguments	
+
+Motion log messages
+SeqNo     	Type	Category            	Code    	Title     	Date                		Description		Arguments	
+31        	W		Motion              	50494   	<title>   	2022-01-14 10:22:09:115311	<description>	
+14        	E		Motion              	50242   	<title>   	2022-01-14 10:22:08:949235	<description>	{args: "rob1_3"}
+
+Communication log messages
+SeqNo     	Type	Category            	Code    	Title     	Date                		Description		Arguments	
+66        	E		Communication       	71405   	<title>   	2022-01-14 10:22:32:509676	<description>	{args: "EGP_IS_CLOSE_1", "ManFSReqTPU"}
+13        	E		Communication       	71301   	<title>   	2022-01-14 10:22:07:400304	<description>	
+12        	W		Communication       	71605   	<title>   	2022-01-14 10:22:07:104490	<description>	
+11        	W		Communication       	71604   	<title>   	2022-01-14 10:22:07:101754	<description>	
+
+UserDef log messages
+SeqNo     	Type	Category            	Code    	Title     	Date                		Description		Arguments	
+
+Safety log messages
+SeqNo     	Type	Category            	Code    	Title     	Date                		Description		Arguments	
+50        	E		Safety              	90542   	<title>   	2022-01-14 10:22:22:184167	<description>	{args: "1"}
+30        	I		Safety              	91038   	<title>   	2022-01-14 10:22:09:100334	<description>	{args: "1", "6"}
+28        	I		Safety              	91038   	<title>   	2022-01-14 10:22:09:035712	<description>	{args: "1", "5"}
+25        	I		Safety              	91038   	<title>   	2022-01-14 10:22:09:019440	<description>	{args: "1", "4"}
+23        	I		Safety              	91038   	<title>   	2022-01-14 10:22:09:009952	<description>	{args: "1", "3"}
+20        	I		Safety              	91038   	<title>   	2022-01-14 10:22:08:996431	<description>	{args: "1", "2"}
+17        	I		Safety              	91038   	<title>   	2022-01-14 10:22:08:982096	<description>	{args: "1", "1"}
+
+Internal log messages
+SeqNo     	Type	Category            	Code    	Title     	Date                		Description		Arguments	
+68        	E		Internal            	100000  	<title>   	2022-01-14 10:22:32:519484	<description>	{args: "MC0: root.c 2518 restore unpack failed"}
+49        	E		Internal            	100000  	<title>   	2022-01-14 10:22:21:839517	<description>	{args: "MC0: Mecunt.c 4862 Mechanical unit 'ROB_1' not active"}
+48        	E		Internal            	100000  	<title>   	2022-01-14 10:22:21:839359	<description>	{args: "MC0: Implementation\ServoJointsManager.cpp 201 Failed to deactivate joint 1 "}
+47        	E		Internal            	100000  	<title>   	2022-01-14 10:22:21:839298	<description>	{args: "MC0: Implementation\ServoDrive.cpp 237 Failed to go to Switch On Disabled state do shutdown. status 0x4031, linkPosition 2, servoNodeNumber 1 "}
+46        	E		Internal            	100000  	<title>   	2022-01-14 10:22:20:339362	<description>	{args: "MC0: Implementation\ServoJointsManager.cpp 201 Failed to deactivate joint 0 "}
+45        	E		Internal            	100000  	<title>   	2022-01-14 10:22:20:339308	<description>	{args: "MC0: Implementation\ServoDrive.cpp 237 Failed to go to Switch On Disabled state do shutdown. status 0x4031, linkPosition 1, servoNodeNumber 1 "}
+44        	E		Internal            	100000  	<title>   	2022-01-14 10:22:18:839380	<description>	{args: "MC0: axc_brd.cpp 1756 Activation of joint 5 failed! "}
+43        	E		Internal            	100000  	<title>   	2022-01-14 10:22:18:839343	<description>	{args: "MC0: Implementation\ServoJointsManager.cpp 161 Failed to activate drive for joint 5 "}
+42        	E		Internal            	100000  	<title>   	2022-01-14 10:22:18:839292	<description>	{args: "MC0: Implementation\ServoDrive.cpp 183 Failed to go to Ready To Switch On state, status 0x50, linkPosition 6, servoNodeNumber 1 "}
+41        	E		Internal            	100000  	<title>   	2022-01-14 10:22:17:314378	<description>	{args: "MC0: axc_brd.cpp 1756 Activation of joint 4 failed! "}
+40        	E		Internal            	100000  	<title>   	2022-01-14 10:22:17:314345	<description>	{args: "MC0: Implementation\ServoJointsManager.cpp 161 Failed to activate drive for joint 4 "}
+39        	E		Internal            	100000  	<title>   	2022-01-14 10:22:17:314293	<description>	{args: "MC0: Implementation\ServoDrive.cpp 183 Failed to go to Ready To Switch On state, status 0x50, linkPosition 5, servoNodeNumber 1 "}
+38        	E		Internal            	100000  	<title>   	2022-01-14 10:22:15:789383	<description>	{args: "MC0: axc_brd.cpp 1756 Activation of joint 3 failed! "}
+37        	E		Internal            	100000  	<title>   	2022-01-14 10:22:15:789346	<description>	{args: "MC0: Implementation\ServoJointsManager.cpp 161 Failed to activate drive for joint 3 "}
+36        	E		Internal            	100000  	<title>   	2022-01-14 10:22:15:789294	<description>	{args: "MC0: Implementation\ServoDrive.cpp 183 Failed to go to Ready To Switch On state, status 0x50, linkPosition 4, servoNodeNumber 1 "}
+35        	E		Internal            	100000  	<title>   	2022-01-14 10:22:14:263382	<description>	{args: "MC0: axc_brd.cpp 1756 Activation of joint 2 failed! "}
+34        	E		Internal            	100000  	<title>   	2022-01-14 10:22:14:263350	<description>	{args: "MC0: Implementation\ServoJointsManager.cpp 161 Failed to activate drive for joint 2 "}
+33        	E		Internal            	100000  	<title>   	2022-01-14 10:22:14:263295	<description>	{args: "MC0: Implementation\ServoDrive.cpp 183 Failed to go to Ready To Switch On state, status 0x4018, linkPosition 3, servoNodeNumber 1 "}
+29        	E		Internal            	100000  	<title>   	2022-01-14 10:22:09:041836	<description>	{args: "MC0: Implementation\ElogCreator.cpp 510 Unknown error code Safety(0x2e02), with severity WARNING. Unit position 6"}
+27        	E		Internal            	100000  	<title>   	2022-01-14 10:22:09:031466	<description>	{args: "MC0: Implementation\ElogCreator.cpp 510 Unknown error code Safety(0x2e02), with severity WARNING. Unit position 5"}
+24        	E		Internal            	100000  	<title>   	2022-01-14 10:22:09:016234	<description>	{args: "MC0: Implementation\ElogCreator.cpp 510 Unknown error code Safety(0x2e02), with severity WARNING. Unit position 4"}
+22        	E		Internal            	100000  	<title>   	2022-01-14 10:22:09:004231	<description>	{args: "MC0: Implementation\ElogCreator.cpp 510 Unknown error code Safety(0x2e02), with severity WARNING. Unit position 3"}
+19        	E		Internal            	100000  	<title>   	2022-01-14 10:22:08:992025	<description>	{args: "MC0: Implementation\ElogCreator.cpp 510 Unknown error code Safety(0x2e02), with severity WARNING. Unit position 2"}
+16        	E		Internal            	100000  	<title>   	2022-01-14 10:22:08:976866	<description>	{args: "MC0: Implementation\ElogCreator.cpp 510 Unknown error code Safety(0x2e02), with severity WARNING. Unit position 1"}
+7         	E		Internal            	100000  	<title>   	2022-01-14 10:21:11:106642	<description>	{args: "MC0: sepModuleStatus.cpp 207 Failed to request module status from M49. Status: -204. "}
+6         	E		Internal            	100000  	<title>   	2022-01-14 10:21:11:106585	<description>	{args: "MC0: sepIoStatus.cpp 467 Timed out while waiting for REPLY. Total wait: 999 ms. "}
+
+Process log messages
+SeqNo     	Type	Category            	Code    	Title     	Date                		Description		Arguments	
+
+Configuration log messages
+SeqNo     	Type	Category            	Code    	Title     	Date                		Description		Arguments	
+
+RAPID log messages
+SeqNo     	Type	Category            	Code    	Title     	Date                		Description		Arguments	
+
+RemoteService log messages
+SeqNo     	Type	Category            	Code    	Title     	Date                		Description		Arguments	

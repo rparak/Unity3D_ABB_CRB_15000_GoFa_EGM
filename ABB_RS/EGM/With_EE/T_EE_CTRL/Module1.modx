@@ -40,8 +40,9 @@ MODULE Module1
                 !  Initialization state to reset variables. !
                 
                 ! Reset Controller Signals
-                SetDO ABB_Local_IO_0_DO1, 0;
-                SetDO ABB_Local_IO_0_DO2, 0; 
+                !   Note: Use only in simulation
+                !SetDO ABB_Local_IO_0_DO1, 0;
+                !SetDO ABB_Local_IO_0_DO2, 0; 
                 
                 ! Reset RAPID Variables
                 DO_DATA_EE_CTRL := [0.0, 0.0, 0.0];

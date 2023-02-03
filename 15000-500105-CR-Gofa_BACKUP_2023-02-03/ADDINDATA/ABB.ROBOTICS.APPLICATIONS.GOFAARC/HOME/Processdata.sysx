@@ -1,0 +1,27 @@
+MODULE Processdata(SYSMODULE)
+    !TASK PERS seamdata sm1:=[0.2,0.05,[0,0,0,0,0,0,0,0,0],0,0,0,0,0,[0,0,0,0,0,0,0,0,0],0,0,[0,0,0,0,0,0,0,0,0],0.1,0,[0,0,0,0,0,0,0,0,0],0.05];
+    !TASK PERS weavedata wv1:=[1,0,4,4,0,0,0,0,0,0,0,0,0,0,0];
+    !TASK PERS welddata wd1:=[10,10,[1,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0]];
+    !TASK PERS seamdata sm2:=[0.2,0.05,[0,0,0,0,0,0,0,0,0],0,0,0,0,0,[0,0,0,0,0,0,0,0,0],0,0,[0,0,0,0,0,0,0,0,0],0.1,0,[0,0,0,0,0,0,0,0,0],0.05];
+    !TASK PERS weavedata wv0:=[0,0,4,4,0,0,0,0,0,0,0,0,0,0,0];
+    !TASK PERS welddata wd2:=[10,10,[2,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0]];
+    TASK PERS seamdata_gofa sm1:=[0.2,0.05,[0,0,0,0,0,0,0,0,0],0,0,0,0,0,[0,0,0,0,0,0,0,0,0],0,0,[0,0,0,0,0,0,0,0,0],0.1,0,[0,0,0,0,0,0,0,0,0],0.05];
+    TASK PERS weavedata_gofa wv1:=[1,0,4,4,0,0,0,0,0,0,0,0,0,0,0];
+    TASK PERS welddata_gofa wd1:=[10,10,[1,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0]];
+    TASK PERS seamdata_gofa sm2:=[0.2,0.05,[0,0,0,0,0,0,0,0,0],0,0,0,0,0,[0,0,0,0,0,0,0,0,0],0,0,[0,0,0,0,0,0,0,0,0],0.1,0,[0,0,0,0,0,0,0,0,0],0.05];
+    TASK PERS weavedata_gofa wv0:=[0,0,4,4,0,0,0,0,0,0,0,0,0,0,0];
+    TASK PERS welddata_gofa wd2:=[10,10,[2,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0]];
+    PERS weldsettings WS1:=[10,1,4,4];
+    PERS weldsettings WS2:=[10,1,0,0];
+    PERS tooldata tWeldGun:=[TRUE,[[107.218,2.79174,297.304],[0.840226,0.434567,0.288056,0.148984]],[1.7,[2.964,0.335,47.609],[1,0,0,0],0,0,0]];
+    CONST jointtarget jposZero := [[0,0,0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    TASK PERS weavedata_gofa Weave:=[1,0,4,4,0,0,0,0,0,0,0,0,0,0,0];
+    TASK PERS weavedata_gofa w2mm:=[1,0,4,2,0,0,0,0,0,0,0,0,0,0,0];
+    TASK PERS weavedata_gofa w4mm:=[1,0,4,4,0,0,0,0,0,0,0,0,0,0,0];
+    TASK PERS weavedata_gofa w6mm:=[1,0,4,6,0,0,0,0,0,0,0,0,0,0,0];
+    PERS WeldSpeedData WS10:=10;
+    PERS WeldSpeedData WS15:=15;
+    PERS JobData Job1:=1;
+    PERS JobData Job2:=2;
+    PERS JobData Job3:=3;
+ENDMODULE

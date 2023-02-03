@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ProductSettings version="1.0">
+  <SerialNumber>15000-500105</SerialNumber>
+  <Signature>btpR/9Grj0tlI5iTdbvSJxB4X8g=</Signature>
+  <Products>
+    <Product name="RobotOS" version="3.0.0+0" id="abb.robotics.robotos">
+      <Settings />
+    </Product>
+    <Product name="RobotWareInstallationUtilities" version="1.2.0+29" id="abb.robotics.robotwareinstaller">
+      <Settings />
+    </Product>
+    <Product name="RobotControl" version="7.2.2+252" id="abb.robotics.robotcontrol">
+      <Settings>
+        <Setting id="abb.robotics.robotcontrol.controller.encapsulation.desktop" displayName="3001-2 Desktop Controller Encapsulation" robot="1" />
+      </Settings>
+    </Product>
+    <Product name="OmniCoreController" version="1.0.0" id="abb.robotics.controller">
+      <Settings>
+        <Setting id="abb.robotics.controller.variant.c30" displayName="OmniCore C30" robot="1" />
+        <Setting id="abb.robotics.controller.axiscomputer.none" displayName="System without axis computer" robot="1" />
+      </Settings>
+    </Product>
+  </Products>
+</ProductSettings>

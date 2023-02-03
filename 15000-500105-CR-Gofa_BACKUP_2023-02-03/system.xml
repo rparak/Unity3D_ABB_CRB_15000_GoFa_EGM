@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemProperties>
+  <SystemName>15000-500105-CR-Gofa</SystemName>
+  <SerialNo>15000-500105</SerialNo>
+  <UsedMedia>
+    <Media path="RobotControl_7.6.1" name="RobotControl" version="7.6.1+294" versionName="7.6.1"/>
+    <Media path="RobotOS_5.0.1" name="RobotOS" version="5.0.1+0" versionName="5.0.1"/>
+    <Media path="Wizard_1.5.0" name="Wizard" version="1.5.0" versionName="1.5.0"/>
+    <Media path="ASI_1.0.6" name="ASI" version="1.0.6" versionName="1.0.6"/>
+    <Media path="Apps_1.8.2" name="FlexPendantSoftwareUpdate" version="1.8.2+0" versionName="1.8.2"/>
+    <Media path="Robots_1.6.1" name="Robots" version="1.6.1+69" versionName="1.6.1"/>
+  </UsedMedia>
+  <ControlModule>
+    <Option descr="UDPUC Driver"/>
+    <Option descr="Leadthrough"/>
+    <Option descr="No Category 0"/>
+    <Option descr="Safe Move Plug and Play"/>
+    <Option descr="Continuous Application Platform"/>
+    <Option descr="Discrete Application Platform"/>
+    <Option descr="English"/>
+    <Option descr="3121-1 RW Add-In Prepared"/>
+    <Option descr="3150-1 Collision Avoidance"/>
+    <Option descr="3107-1 Collision Detection"/>
+    <Option descr="3029-1 DeviceNet Single Channel"/>
+    <Option descr="3124-1 Externally Guided Motion (EGM)"/>
+    <Option descr="3120-2 FlexPendant Essential App Package"/>
+    <Option descr="3151-1 FlexPendant Program Package"/>
+    <Option descr="3116-1 FTP and SFTP client"/>
+    <Option descr="3127-1 Integrated Vision Interface"/>
+    <Option descr="3044-2 Keyless Mode Switch, 2 modes"/>
+    <Option descr="3114-1 Multitasking"/>
+    <Option descr="3113-1 Path Recovery"/>
+    <Option descr="3023-2 PROFIsafe Device"/>
+    <Option descr="3020-2 PROFINET Device"/>
+    <Option descr="3119-1 RobotStudio Connect"/>
+    <Option descr="3043-3 SafeMove Collaborative"/>
+    <Option descr="3106-1 World Zones"/>
+    <Option descr="RobotControl Base"/>
+  </ControlModule>
+  <DriveModule>
+    <Name>Robot1</Name>
+    <Option descr="C30-D7 for CRB 15000"/>
+  </DriveModule>
+  <AdditionalOption>
+    <Name>Wizard</Name>
+    <Option descr="Wizard"/>
+  </AdditionalOption>
+  <AdditionalOption>
+    <Name>ASI</Name>
+    <Option descr="ASI"/>
+  </AdditionalOption>
+  <AdditionalOption>
+    <Name>FlexPendantSoftwareUpdate</Name>
+    <Option descr="FlexPendant App Package"/>
+  </AdditionalOption>
+  <AdditionalOption>
+    <Name>Robots</Name>
+    <Option descr="CRB 15000-5/0.95"/>
+  </AdditionalOption>
+</SystemProperties>

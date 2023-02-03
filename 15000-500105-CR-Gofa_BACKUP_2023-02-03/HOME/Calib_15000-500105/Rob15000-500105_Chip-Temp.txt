@@ -1,0 +1,14 @@
+Rob: 15000-500105 Chip Temperture
+2021-06-17
+13:19:13
+Tool0
+Axis   Channel-A   Channel-B
+Axis	SOC	PCB0	PCB1	MotorEncoder	LoadEncoder	
+Axis1	50	39	39	43	43
+Axis2	49	39	40	42	43
+Axis3	49	40	40	43	43
+Axis4	51	41	41	45	45
+Axis5	53	43	43	46	47
+Axis6	54	45	44	47	48
+ 
+ 

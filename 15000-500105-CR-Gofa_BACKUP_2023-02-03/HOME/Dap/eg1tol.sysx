@@ -1,0 +1,84 @@
+%%%
+  VERSION: 1
+  LANGUAGE: ENGLISH
+%%%
+MODULE EG1_TOOL (SYSMODULE)
+
+ !*******************************************************************
+ ! 
+ ! Example module for testing the Discrete Application
+ !
+ ! ----------------
+ ! $Revision: 1.5 $ 
+ ! ----------------
+ ! Copyright (c) ABB Robotics Products AB 1996.  All rights reserved
+ !
+ ! Module name ..........: EG1_TOOL - Application tool definitions
+ !
+ ! Application name .....: EG1
+ !
+ ! Number of processes ..: 2
+ !
+ 
+ ! User defined data
+ ! Definition of the procdata
+ RECORD EG1procdata
+   string EG1_string_comp;
+ ENDRECORD
+ 
+ ! Definition of the tooldata
+ ! Tooldata contains the event times for the three time
+ ! event hooks. The unit for the event times is second.
+ RECORD EG1tooldata
+   string EG1_string_comp;
+   num time_event1;
+   num time_event2;
+   num time_event3;
+ ENDRECORD
+ 
+ ! Definnition of the intdata
+ RECORD EG1intdata
+   daintdata internal;
+   string EG1_string_comp;
+ ENDRECORD
+
+ ! Number of processes
+ PERS num EG1_NOF_PROC := 1;
+ CONST num EG1_NOF_POS_PRC := 4;
+
+ ! Number of robots with EG applikations in it
+ PERS num EG1_NOF_ROB := 1;
+ CONST num EG1_MAX_NOF_ROB := 4;
+ 
+ ! Application descriptor
+ PERS dadescapp EG1_app_desc{EG1_MAX_NOF_ROB};
+ 
+ ! Process descriptors
+ PERS dadescprc EG1_prc_desc{EG1_NOF_POS_PRC};
+  
+ ! Application name
+ CONST string EG1_app_name := "EG1";
+ 	      
+ ! Process numbers
+ CONST num EG1_prc_no{EG1_NOF_POS_PRC} := [1, 2, 3, 4];
+
+ ! Allocate user defined objects
+ ! PROCDATA
+ PERS EG1procdata EG1_prc_data{EG1_NOF_POS_PRC} := [["PROCDATA1"], ["PROCDATA2"], ["PROCDATA3"], ["PROCDATA4"]];
+ 
+ ! TOOLDATA
+ PERS EG1tooldata EG1_tool_data{EG1_NOF_POS_PRC} := [	["TOOLDATA1", 0.20, 0.1, 0.05], 
+ 														["TOOLDATA2", 0.15, 0.1, 0.05], 
+ 														["TOOLDATA3", 0.10, 0.1, 0.05], 
+ 														["TOOLDATA4", 0.25, 0.1, 0.05]];
+ 																		      
+ ! INTDATA
+ PERS EG1intdata EG1_int_data{EG1_NOF_POS_PRC} := [	[[5, TRUE, TRUE, 1, 1, 0, 0,""], "INTDATA1"],
+                                                  	[[7, TRUE, TRUE, 1, 1, 0, 0,""], "INTDATA2"], 
+									              	[[3, TRUE, TRUE, 1, 1, 0, 0,""], "INTDATA3"],
+                                                  	[[4, TRUE, TRUE, 1, 1, 0, 0,""], "INTDATA4"]];
+
+ ! User data
+ PERS num EG1_prc_time_out := 1.5;
+ 
+ENDMODULE

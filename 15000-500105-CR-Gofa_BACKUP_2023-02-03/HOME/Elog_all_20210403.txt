@@ -1,0 +1,62 @@
+System Time:   2021-04-03 03:47:38
+System Name:   15000-500105-CR-Gofa
+Controller Name:  15000-500105-CR-Gofa
+Controller ID:  15000-500105
+
+RobotWare:  7.6.0
+Key:  -
+Options:   
+ 
+ 
+ UDPUC Driver
+ Leadthrough
+ No Category 0
+ Safe Move Plug and Play
+ English
+ 3121-1 RW Add-In Prepared
+ 3150-1 Collision Avoidance
+ 3107-1 Collision Detection
+ 3029-1 DeviceNet Single Channel
+ 3124-1 Externally Guided Motion (EGM)
+ 3120-2 FlexPendant Essential App Package
+ 3151-1 FlexPendant Program Package
+ 3116-1 FTP and SFTP client
+ 3127-1 Integrated Vision Interface
+ 3044-2 Keyless Mode Switch, 2 modes
+ 3114-1 Multitasking
+ 3113-1 Path Recovery
+ 3023-2 PROFIsafe Device
+ 3020-2 PROFINET Device
+ 3119-1 RobotStudio Connect
+ 3043-3 SafeMove Collaborative
+ 3106-1 World Zones
+ RobotControl Base
+
+DriveModule   
+Key:   
+Options:   
+	C30-D7 for CRB 15000
+	Motor Commutation
+	Service Info System
+
+Additional Options:   
+
+FlexPendantSoftwareUpdate   
+Key:   
+Options:   
+	Wizard 
+
+RobotControlDevFunctions   
+Key:   
+Options:   
+	ASI 
+	FlexPendant App Package 
+
+RobotOSDevFunctions   
+Key:   
+Options:   
+	CRB 15000-5/0.95 
+
+Robots   
+Key:   
+Options:   

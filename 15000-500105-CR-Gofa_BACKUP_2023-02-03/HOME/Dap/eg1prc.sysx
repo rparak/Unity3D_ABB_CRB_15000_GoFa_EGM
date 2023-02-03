@@ -1,0 +1,291 @@
+%%%
+  VERSION: 1
+  LANGUAGE: ENGLISH
+%%%
+MODULE EG1_PROC (SYSMODULE)
+
+ !*******************************************************************
+ ! 
+ ! Example module for testing the Discrete Application
+ !
+ ! ----------------
+ ! $Revision: 1.3 $ 
+ ! ----------------
+ ! Copyright (c) ABB Robotics Products AB 1996.  All rights reserved
+ !
+ ! Module name ..........: EG1_PROC - Application process definitions
+ !				      	   and RAPID user hooks.
+ !
+ ! Application name .....: EG1
+ !
+ ! Number of processes ..........: 2
+ ! Process number of process 1 ..: 1
+ ! Process number of process 2 ..: 2
+ !
+ 
+ !*******************************************************************
+ !
+ ! DaPrepPrcEG1 - Discrete application prepare process of application
+ !	          EG1.
+ !
+ ! DESCRIPTION:
+ !   RAPID user sequence hook, will be called at the start of the 
+ !   motions.
+ !
+ !   Here we show how the process data (EG1_prc_data) can bee
+ !   reached. Then we just write the string defined in the
+ !   EG1_prc_data for the executed process.
+ !
+ PROC DaPrepPrcEG1(PERS num Status,
+                   num ProcNo,
+                   bool Par1,
+                   string Par2)
+
+ VAR EG1procdata proc_data;
+
+ DaGetCurrData EG1_prc_desc{ProcNo}, proc_data, DA_PROC_DATA;
+ TPWrite "DaPrepPrcEG1: PROCDATA = " + proc_data.EG1_string_comp;
+ Status := DAOK;
+
+ ENDPROC
+ 
+ 
+ !*******************************************************************
+ !
+ ! DaTmEvt1EG1 - Discrete application time event 1 of application EG1.
+ !
+ ! DESCRIPTION:
+ !   RAPID user sequence hook, will be called at the first time event
+ !   of the  motion.
+ !
+ !   Here we show how the process tool data (EG1_tool_data) can bee
+ !   reached. Then we just write the string defined in the
+ !   EG1_tool_data for the executed process. Finally we set a digital
+ !   output signal depending which process is in state executing.
+ !
+ PROC DaTmEvt1EG1(PERS num Status,
+                  num ProcNo,
+                  bool Par1,
+                  string Par2)
+
+ VAR EG1tooldata tool_data;
+
+ DaGetCurrData EG1_prc_desc{ProcNo}, tool_data, DA_TOOL_DATA;
+ TPWrite "DaTmEvt1EG1: TOOLDATA = " + tool_data.EG1_string_comp;
+ IF (ProcNo = EG1_prc_no{1}) 
+   	Set doArbitrary1;
+ IF (ProcNo = EG1_prc_no{2}) 
+   	Set doArbitrary2;
+ 
+ Status := DAOK;
+
+ ENDPROC
+ 
+ 
+ !*******************************************************************
+ !
+ ! DaTmEvt2EG1 - Discrete application time event 2 of application EG1.
+ !
+ ! DESCRIPTION:
+ !   RAPID user sequence hook, will be called at the second time event
+ !   of the motion.
+ !
+ !   Here we show how the internal process data (EG1_int_data) can bee
+ !   reached. Then we just write the string defined in the
+ !   EG1_int_data for the executed process. Finally we reset a digital
+ !   output signal depending which process is in state executing.
+ !
+ PROC DaTmEvt2EG1(PERS num Status,
+                  num ProcNo,
+                  bool Par1,
+                  string Par2)
+
+ VAR EG1intdata int_data;
+
+ DaGetCurrData EG1_prc_desc{ProcNo}, int_data, DA_INTPROC_DATA;
+ TPWrite "DaTmEvt2EG1: INTDATA = " + int_data.EG1_string_comp;
+ IF (ProcNo = EG1_prc_no{1}) 
+ 	Reset doArbitrary1;
+ IF (ProcNo = EG1_prc_no{2}) 
+ 	Reset doArbitrary2;
+   
+ Status := DAOK;
+   	
+ ENDPROC
+ 
+ 
+ !*******************************************************************
+ !
+ ! DaTmEvt3EG1 - Discrete application time event 3 of application EG1.
+ !
+ ! DESCRIPTION:
+ !   RAPID user sequence hook, will be called at the third time event
+ !   of the motion.
+ !
+ !   Here we just write the name of the hook. But since we have chosen
+ !   to not carry out this hook, the name of this hook will then not
+ !   bee displayed on the teachpendant.
+ !
+ PROC DaTmEvt3EG1(PERS num Status,
+                  num ProcNo,
+                  bool Par1,
+                  string Par2)
+
+ TPWrite "DaTmEvt3EG1: Process time event3 hook";
+ Status := DAOK;
+		   
+ ENDPROC
+ 
+ 
+ !*******************************************************************
+ !
+ ! DaStartEG1 - Discrete application start of application EG1.
+ !
+ ! DESCRIPTION:
+ !   RAPID user hook, will be called before the start signal is set
+ !   by the kernel. This event is either executed at inposition 
+ !   (default) or immediately after the third time event.
+ !   
+ !   Here we just write the name of the hook.
+ !
+ PROC DaStartEG1(PERS num Status,
+                 num ProcNo,
+                 bool Par1,
+                 string Par2)
+
+ TPWrite "DaStartEG1: Process start hook";
+ Status := DAOK;
+ 
+ ENDPROC
+ 
+ 
+ !*******************************************************************
+ !
+ ! DaEndPrcEG1 - Discrete application end of application EG1.
+ !
+ ! DESCRIPTION:
+ !   RAPID users hook, will be called when receiving the process ready
+ !   signal. This indicates a successful end of the process and should
+ !   be the last process event hook.
+ !   
+ !   Here we just write the name of the hook.
+ !
+ PROC DaEndPrcEG1(PERS num Status,
+                  num ProcNo,
+                  bool Par1,
+                  string Par2)
+
+ TPWrite "DaEndPrcEG1: Process end hook";
+ Status := DAOK;
+  
+ ENDPROC
+ 
+ 
+ !*******************************************************************
+ !
+ ! DaExtStopEG1 - Discrete application stop of application EG1.
+ !
+ ! DESCRIPTION:
+ !   RAPID user hook, will be called when receiving the process 
+ !   external stop signal.
+ !
+ !   Here we just write the name of the hook.
+ !
+ PROC DaExtStopEG1(PERS num Status,
+                   num ProcNo,
+                   bool Par1,
+                   string Par2)
+
+ TPWrite "DaExtStopEG1: External stop hook";
+ Status := DAOK;
+ 
+ ENDPROC
+ 
+ 
+ !*******************************************************************
+ !
+ ! DaTimoutEG1 - Discrete application timeout of application EG1.
+ !
+ ! DESCRIPTION:
+ !   RAPID user hook, will be called when the process timeout has
+ !   passed without receiving neither the ready signal not the stop
+ !   signal.
+ !
+ !   Here we just write the name of the hook. This hook will be
+ !   called since we can't receive the ready signal. This depends
+ !   on the fact that we use a simulated I/O-board.
+ ! 
+ PROC DaTimoutEG1( PERS num Status,
+                   num ProcNo,
+                   bool Par1,
+                   string Par2)
+
+ TPWrite "DaTimoutEG1: Process timeout hook";
+ Status := DAOK;
+ 
+ ENDPROC
+ 
+ 
+ !*******************************************************************
+ !
+ ! DaHoldPrcEG1 - Discrete application hold of application EG1.
+ !
+ ! DESCRIPTION:
+ !   RAPID user hook, will be called when the process hold signal is
+ !   set. Trigger on positive edge.
+ !
+ !   Here we just write the name of the hook.
+ !
+ PROC DaHoldPrcEG1(PERS num Status,
+                   num ProcNo,
+                   bool Par1,
+                   string Par2)
+
+ TPWrite "DaHoldPrcEG1: Process hold hook";
+ Status := DAOK;
+
+ ENDPROC
+ 
+ 
+ !*******************************************************************
+ !
+ ! DaRlsPrcEG1 - Discrete application release of application EG1.
+ !
+ ! DESCRIPTION:
+ !   RAPID user hook, will be called when the process hold signal is
+ !   reset after a hold. Trigger on negative edge.
+ !
+ !   Here we just write the name of the hook.
+ !
+ PROC DaRlsPrcEG1(PERS num Status,
+                  num ProcNo,
+                  bool Par1,
+                  string Par2)
+
+ TPWrite "DaRlsPrcEG1: Process release hook";
+ Status := DAOK;
+
+ ENDPROC
+ 
+ 
+ !*******************************************************************
+ !
+ ! DaAbortPrcEG1 - Discrete application abort of application EG1.
+ !
+ ! DESCRIPTION:
+ !   RAPID user hook, will be called when the process abort signal is 
+ !   set. Trigger on positive edge.
+ !
+ !   Here we just write the name of the hook.
+ !
+ PROC DaAbortPrcEG1(PERS num Status,
+                    num ProcNo,
+                    bool Par1,
+                    string Par2)
+
+ TPWrite "DaAbortPrcEG1: Process abort hook";
+ Status := DAOK;
+
+ ENDPROC
+
+ENDMODULE

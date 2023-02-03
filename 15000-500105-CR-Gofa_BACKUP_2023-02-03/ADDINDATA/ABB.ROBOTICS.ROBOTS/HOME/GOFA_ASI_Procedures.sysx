@@ -1,0 +1,13 @@
+MODULE GOFA_ASI_Procedures(SYSMODULE)
+    PROC ASI_Routine1()
+        !Example of Customized routine that can be connected with ASI buttons
+        !MoveJ [[0,0,0],[1,0,0,0],[0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]],v100,z0,tool0;
+        TPWrite "Example 1";
+    ENDPROC
+
+    PROC ASI_Routine2()
+        !Example of Customized routine that can be connected with ASI buttons
+        !MoveJ [[0,0,0],[1,0,0,0],[0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]],v100,z0,tool0;
+        TPWrite "Example 2";
+    ENDPROC
+ENDMODULE

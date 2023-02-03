@@ -1,0 +1,16 @@
+%%%
+  VERSION:1
+  LANGUAGE:ENGLISH
+%%%
+
+MODULE EG1
+  CONST robtarget p10:=[[885.95,207.35,1147],[0.828201,0.06631,0.552983,0.062424],[0,0,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+
+  PROC main()
+  	VAR num equip1 := 1;
+    
+    DaSetupAppBehav \Exclude1:=TmEvt3;
+    MoveJ [[747.12,-50.03,1146.99],[0.828196,0.066272,0.552998,0.062396],[-1,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]],v1000,z50,tool0;
+    EG1ML p10, v200, equip1, tool0;
+  ENDPROC
+ENDMODULE

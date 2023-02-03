@@ -1,0 +1,5 @@
+MODULE Wizard
+	PROC main()
+		<SMT>
+	ENDPROC
+ENDMODULE

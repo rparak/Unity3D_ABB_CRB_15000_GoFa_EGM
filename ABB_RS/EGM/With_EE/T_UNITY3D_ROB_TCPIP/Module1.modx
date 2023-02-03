@@ -46,6 +46,8 @@ MODULE Module1
         ! Create a new socket for connection based-communication.
         SocketCreate rs_server_socket_dev;
         ! Bind a socket to an IP-address and port
+        !   Note:
+        !       IP-address: Localhost ("127.0.0.1"), Real ("192.168.125.1")
         SocketBind rs_server_socket_dev, "127.0.0.1", 6061;
         ! Listen for incoming connections
         SocketListen rs_server_socket_dev;
@@ -74,7 +76,7 @@ MODULE Module1
         
         ERROR
             TPWrite "Communication timedout: TCP/IP";
-            RETRY;
+            TRYNEXT;
         UNDO
             SocketClose rs_server_socket_dev;
             SocketClose rs_client_socket_dev;

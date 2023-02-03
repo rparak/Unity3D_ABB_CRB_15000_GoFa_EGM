@@ -1,0 +1,19 @@
+MODULE Wizard_Params (SYSMODULE)
+    !***************************************************************************
+    !*                              Common parameters                          *
+    !***************************************************************************
+    ! Predefined common targets for user to use	
+    CONST jointtarget wi_jPosCalib:=[[0,0,0,0,30,0],[9E+9,9E+9,9E+9,9E+9,9E+9,9E+9]];
+
+	PERS robtarget wi_homePosition:=[[597.47,0.00,837.78],[0.5,0,0.866025,0],[0,0,0,0],[9E+9,9E+9,9E+9,9E+9,9E+9,9E+9]];
+
+    VAR errnum wi_errnum;
+
+    PERS bool wi_bFirstLaunched:=TRUE;
+
+    PERS string wi_asiMoveType:="move_to_location";
+
+    ! The parameter is the option sequence of Speed dropdown
+    PERS string wi_speed:="VQUICK:v1000,QUICK:v500,MODERATE:v200,SLOW:v50,VSLOW:v20";
+
+ENDMODULE

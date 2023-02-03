@@ -1,0 +1,26 @@
+MODULE Module1
+    VAR num Cislo;
+
+    PROC Routine1()
+        MoveAbsJ [[48.7248,37.3302,-27.6029,-3.58756,83.1261,-120.282],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]]\NoEOffs,v1000,z50,tool0;
+        MoveL [[-525.71,615.88,542.34],[0.0382938,0.995039,-0.0912101,0.0105764],[1,0,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]],v1000,z50,tool0;
+    ENDPROC
+
+    PROC Ovladanie_Grip()
+        WHILE TRUE DO
+            TPReadFK Cislo,"Zadajte cislo","1",stEmpty,stEmpty,stEmpty,"2";
+            IF Cislo=1 THEN
+                Set ABB_Local_IO_0_DO1;
+                Reset ABB_Local_IO_0_DO2;
+                WaitTime 3;
+                Reset ABB_Local_IO_0_DO1;
+                Set ABB_Local_IO_0_DO2;
+                WaitTime 3;
+            ELSEIF Cislo=2 THEN
+                    TPWrite "Stlacili ste 0.";
+                    WaitTime 2;
+                ENDIF
+            endwhile
+        ENDPROC      
+
+    ENDMODULE

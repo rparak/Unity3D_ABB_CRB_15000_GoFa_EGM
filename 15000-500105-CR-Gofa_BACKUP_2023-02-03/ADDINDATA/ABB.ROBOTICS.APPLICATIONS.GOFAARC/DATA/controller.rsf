@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProductSettings version="2.0">
+  <Products>
+    <Product name="RobotControl" version="7.7.1+296" id="abb.robotics.robotcontrol" distName="RobotWare" distVersion="7.7.1">
+      <Features>
+        <Feature id="abb.robotics.robotcontrol.options.leadthrough" displayName="Leadthrough" robot="1" />
+        <Feature id="abb.robotics.robotcontrol.options.safemove.smpnp" displayName="Safe Move Plug and Play" robot="1" />
+        <Feature id="abb.robotics.robotcontrol.options.nocat0stop" displayName="No Category 0" robot="1" />
+        <Feature id="abb.robotics.robotcontrol.languages.english" displayName="English" robot="1" path="\English\Default Language\System Options\" />
+        <Feature id="abb.robotics.robotcontrol.options.absoluteaccuracy" displayName="3101-x Absolute Accuracy" robot="1" path="\3101-x Absolute Accuracy\Motion Performance\System Options\" />
+        <Feature id="abb.robotics.robotcontrol.options.addinprepared" displayName="3121-1 RW Add-In Prepared" robot="1" path="\3121-1 RW Add-In Prepared\Engineering Tools\System Options\" />
+        <Feature id="abb.robotics.robotcontrol.options.advancedrobotmotion" displayName="3100-1 Advanced Robot Motion" robot="1" path="\3100-1 Advanced Robot Motion\Motion Performance\System Options\" />
+        <Feature id="abb.robotics.robotcontrol.options.applicationplatforms" displayName="3125-1 Continuous and Discrete Application Platform" robot="1" path="\3125-1 Continuous and Discrete Application Platform\Application Engineering\System Options\" />
+        <Feature id="abb.robotics.robotcontrol.options.applicationplatforms.cap" displayName="Continuous Application Platform" robot="1" path="\Continuous Application Platform\Application Platform\3125-1 Continuous and Discrete Application Platform\Application Engineering\System Options\" />
+        <Feature id="abb.robotics.robotcontrol.options.applicationplatforms.dap" displayName="Discrete Application Platform" robot="1" path="\Discrete Application Platform\Application Platform\3125-1 Continuous and Discrete Application Platform\Application Engineering\System Options\" />
+        <Feature id="abb.robotics.robotcontrol.options.asciilog" displayName="ASCII Log" robot="1" path="\ASCII Log\Other Software Options\System Options\" />
+        <Feature id="abb.robotics.robotcontrol.options.collisionavoidance" displayName="3150-1 Collision Avoidance" robot="1" path="\3150-1 Collision Avoidance\Motion Supervision\System Options\" />
+        <Feature id="abb.robotics.robotcontrol.options.collisiondetection" displayName="3107-1 Collision Detection" robot="1" path="\3107-1 Collision Detection\Motion Supervision\System Options\" />
+        <Feature id="abb.robotics.robotcontrol.options.detachabletpu" displayName="3018-1 Hot Swappable FlexPendant" robot="1" path="\3018-1 Hot Swappable FlexPendant\User Interaction Application\System Options\" />
+        <Feature id="abb.robotics.robotcontrol.options.devicenet.mssingle" displayName="3029-1 DeviceNet Single Channel" robot="1" path="\3029-1 DeviceNet Single Channel\DeviceNet\Industrial Networks and Fieldbuses\System Options\" />
+        <Feature id="abb.robotics.robotcontrol.options.ethernetip.adapter" displayName="3024-2 EtherNet/IP Adapter" robot="1" path="\3024-2 EtherNet/IP Adapter\EtherNet/IP\Industrial Networks and Fieldbuses\System Options\" />
+        <Feature id="abb.robotics.robotcontrol.options.ethernetip.scanner" displayName="3024-1 EtherNet/IP Scanner" robot="1" path="\3024-1 EtherNet/IP Scanner\EtherNet/IP\Industrial Networks and Fieldbuses\System Options\" />
+        <Feature id="abb.robotics.robotcontrol.options.flexpendant.essential" displayName="3120-2 FlexPendant Essential App Package" robot="1" path="\3120-2 FlexPendant Essential App Package\User Interaction Application\System Options\" />
+        <Feature id="abb.robotics.robotcontrol.options.flexpendant.limited" displayName="3120-1 FlexPendant Limited App Package" robot="1" path="\3120-1 FlexPendant Limited App Package\User Interaction Application\System Options\" />
+        <Feature id="abb.robotics.robotcontrol.options.flexpendant.program" displayName="3151-1 FlexPendant Program Package" robot="1" path="\3151-1 FlexPendant Program Package\User Interaction Application\System Options\" />
+        <Feature id="abb.robotics.robotcontrol.options.forcecontrol" displayName="3038-1 Force Control Interface" robot="1" path="\3038-1 Force Control Interface\Force Control\System Options\" />
+        <Feature id="abb.robotics.robotcontrol.options.ftpclient" displayName="3116-1 FTP and SFTP client" robot="1" path="\3116-1 FTP and SFTP client\Communication\System Options\" />
+        <Feature id="abb.robotics.robotcontrol.options.iotdatagateway" displayName="3154-1 IoT Data Gateway" robot="1" path="\3154-1 IoT Data Gateway\Communication\System Options\" />
+        <Feature id="abb.robotics.robotcontrol.options.keylessmodeswitch2" displayName="3044-2 Keyless Mode Switch, 2 modes" robot="1" path="\3044-2 Keyless Mode Switch, 2 modes\Functional Safety\System Options\" />
+        <Feature id="abb.robotics.robotcontrol.options.multitasking" displayName="3114-1 Multitasking" robot="1" path="\3114-1 Multitasking\RAPID Program Features\System Options\" />
+        <Feature id="abb.robotics.robotcontrol.options.nfsclient" displayName="3117-1 NFS client" robot="1" path="\3117-1 NFS client\Communication\System Options\" />
+        <Feature id="abb.robotics.robotcontrol.options.pathrecovery" displayName="3113-1 Path Recovery" robot="1" path="\3113-1 Path Recovery\RAPID Program Features\System Options\" />
+        <Feature id="abb.robotics.robotcontrol.options.robotstudioconnect" displayName="3119-1 RobotStudio Connect" robot="1" path="\3119-1 RobotStudio Connect\User Interaction Application\System Options\" />
+        <Feature id="abb.robotics.robotcontrol.options.safemove.collaborative" displayName="3043-3 SafeMove Collaborative" robot="1" path="\3043-3 SafeMove Collaborative\Functional Safety\System Options\" />
+        <Feature id="abb.robotics.robotcontrol.options.softmove" displayName="3108-1 SoftMove" robot="1" path="\3108-1 SoftMove\Motion Functions\System Options\" />
+        <Feature id="abb.robotics.robotcontrol.options.worldzones" displayName="3106-1 World Zones" robot="1" path="\3106-1 World Zones\Motion Supervision\System Options\" />
+        <Feature id="abb.robotics.robotcontrol.base" displayName="RobotControl Base" robot="1" path="\RobotControl Base\RobotWare Base\System Options\" />
+        <Feature id="abb.robotics.robotcontrol.drivesystems.drive.dc48.du48.dm48.single" displayName="C30-D7 for CRB 15000" robot="1" path="\C30-D7 for CRB 15000\C30/C90XT\Controllers\" />
+      </Features>
+    </Product>
+    <Product name="RobotOS" version="6.0.1+0" id="abb.robotics.robotos" distName="RobotWare" distVersion="7.7.1">
+      <Features>
+        <Feature id="abb.robotics.robotos" displayName="Robot Controller Operating System" robot="1" path="\Robot Controller Operating System\Robot OS\System Features\" />
+      </Features>
+    </Product>
+    <Product name="ASI" version="1.0.6" id="abb.robotics.asi" distName="ASI HMI web app" distVersion="1.0.6">
+      <Features>
+        <Feature id="abb.robotics.asi.asi" displayName="ASI" robot="1" path="\ASI\Arm Side Interface\" />
+      </Features>
+    </Product>
+    <Product name="FlexPendantSoftwareUpdate" version="1.9.0+0" id="abb.robotics.flexpendantapps" distName="RobotWare" distVersion="7.7.1">
+      <Features>
+        <Feature id="abb.robotics.flexpendantapps.apps" displayName="FlexPendant App Package" robot="1" path="\FlexPendant App Package\Apps\FlexPendant\" />
+      </Features>
+    </Product>
+    <Product name="Robots" version="1.7.1+50" id="abb.robotics.robots" distName="RobotWare" distVersion="7.7.1">
+      <Features>
+        <Feature id="abb.robotics.robots.robots.crb15000.5-0_95" displayName="CRB 15000-5/0.95" robot="1" path="\CRB 15000-5/0.95\CRB 15000\Collaborative Robots\Robots\" />
+      </Features>
+    </Product>
+    <Product name="Wizard" version="1.4.2" id="abb.cn.robotics.wizard" distName="Wizard Easy Programming" distVersion="1.4.2">
+      <Features>
+        <Feature id="abb.cn.robotics.wizard.wizard" displayName="Wizard" robot="1" path="\Wizard\EasyProgramming\" />
+      </Features>
+    </Product>
+    <Product name="GoFaArc" version="1.0.0-45.Beta1+45" id="abb.robotics.applications.gofaarc" distName="GoFaArcWare" distVersion="1.0.0-45.Beta1">
+      <Features>
+        <Feature id="abb.robotics.applications.gofaarc.arc" displayName="xxxx-1 GoFaArc 7" robot="1" path="\xxxx-1 GoFaArc 7\Application GoFaArc for CRB 15000\GoFa Arc\" />
+        <Feature id="abb.robotics.applications.gofaarc.standardiowelder" displayName="Standard IO welder" robot="1" path="\Standard IO welder\Power source\Application GoFaArc for CRB 15000\GoFa Arc\" />
+      </Features>
+    </Product>
+  </Products>
+</ProductSettings>

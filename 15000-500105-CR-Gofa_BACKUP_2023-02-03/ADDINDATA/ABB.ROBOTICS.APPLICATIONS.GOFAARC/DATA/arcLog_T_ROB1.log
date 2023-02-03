@@ -1,0 +1,264 @@
+14:09:50 ====================  NEW LOG ====================
+14:09:50 Task: tAwSys_1 MechTask: T_ROB1 TaskId: 1
+14:09:50 Found ARC1 WelderType: StandardIO EquipmentClass: awEquipSTD
+14:09:50   Path: ARC:/WeldEquip/Code/
+14:09:50 B Did not find ARC2
+14:09:50 B Did not find ARC3
+14:09:50 Arc Systems found via key: 1
+14:09:50 Arc Systems found via Config: 1
+14:09:50 Global number of Arc Systems: 1
+14:09:50 ConfErrorHandler: ARC_ERR_HNDL default
+14:09:50   GetCfgDataBool: RepairEnabled = FALSE
+14:09:50   GetCfgDataBool: Enabled = TRUE
+14:09:50   GetCfgDataNum: DefAction = 0
+14:09:50   GetCfgDataNum: DefResumeType = 0
+14:09:50   GetCfgDataNum: MoveOutDist = 10
+14:09:50   GetCfgDataNum: PathRecSpeed = 800
+14:09:50   GetCfgDataNum: PathToolOffs = 10
+14:09:50   Result: TRUE
+14:09:50 ConfRecovMenu: ARC_RECOVERY_MENU default
+14:09:50   GetCfgDataBool: HideResumeAtErr = FALSE
+14:09:50   GetCfgDataBool: HideSkipFwd = FALSE
+14:09:50   GetCfgDataBool: HideSkipSeam = FALSE
+14:09:50   GetCfgDataBool: HideSkipPart = FALSE
+14:09:50   GetCfgDataBool: HideAbort = TRUE
+14:09:50   Result: TRUE
+14:09:50 Retries on user level(SYS_MISC):
+14:09:50   GetCfgDataNum: Value = 50
+14:09:50   Error handler configured for ARC1
+14:09:51 Loaded: ARC:/WeldEquip/Code/awEquipSTD.modx
+14:09:51 T_ROB1:pInitArcProc:nActWeldSys:ARC1
+14:09:51   GetCfgDataBool: ind_rob_prop_on = FALSE
+14:09:51 T_ROB1:pSetupSys:-->System Parameters
+14:09:51   GetCfgDataStr: use_arc_sys_prop = ARC1
+14:09:51   GetCfgDataStr: use_arc_err_hndl = default
+14:09:51   GetCfgDataStr: units = SI_UNITS
+14:09:51   GetCfgDataBool: restart_on = FALSE
+14:09:51   GetCfgDataNum: restart_dist = 0
+14:09:51   GetCfgDataNum: no_of_retries = 0
+14:09:51   GetCfgDataBool: scrape_on = FALSE
+14:09:51   GetCfgDataBool: scrape_opt_on = FALSE
+14:09:51   GetCfgDataNum: scrape_width = 5
+14:09:51   GetCfgDataNum: scrape_dir = 0
+14:09:51   GetCfgDataNum: scrape_cy_time = 0.5
+14:09:51   GetCfgDataBool: ign_mov_delay_on = FALSE
+14:09:51   GetCfgDataNum: MotionTimeout = 1
+14:09:51   GetCfgDataBool: weavesync_on = FALSE
+14:09:51 T_ROB1:pSetupSysMMSync-->System Parameters
+14:09:51   GetCfgDataStr: use_arc_sys_prop = ARC1
+14:09:51   GetCfgDataNum: restart_dist = 0
+14:09:51   GetCfgDataNum: no_of_retries = 0
+14:09:51   GetCfgDataBool: scrape_on = FALSE
+14:09:51   GetCfgDataBool: scrape_opt_on = FALSE
+14:09:51   GetCfgDataNum: scrape_width = 5
+14:09:51   GetCfgDataNum: scrape_dir = 0
+14:09:51   GetCfgDataNum: scrape_cy_time = 0.5
+14:09:51 T_ROB1:pSetupEQSig:ARC1_EQUIP_T_ROB1
+14:09:51   GetCfgDataStr: use_arc_equip_prop = ARC1_stdIO_T_ROB1
+14:09:51   GetCfgDataStr: use_arc_equip_io_di = stdIO_T_ROB1
+14:09:51   GetCfgDataStr: use_arc_equip_io_do = stdIO_T_ROB1
+14:09:51   GetCfgDataStr: use_arc_equip_io_ao = stdIO_T_ROB1
+14:09:51   GetCfgDataStr: use_arc_equip_io_ai = stdIO_T_ROB1
+14:09:51   GetCfgDataStr: use_arc_equip_io_go = stdIO_T_ROB1
+14:09:51 T_ROB1:pConfEqProp:-->Logging Equipment Properties
+14:09:51   GetCfgDataBool: precond_on = FALSE
+14:09:51   GetCfgDataNum: arc_preset = 0.05
+14:09:51   GetCfgDataNum: schedport_type = 0
+14:09:51   GetCfgDataBool: fill_on = FALSE
+14:09:51   GetCfgDataBool: burnback_on = FALSE
+14:09:51   GetCfgDataBool: burnb_volt_on = FALSE
+14:09:51   GetCfgDataBool: rollback_on = FALSE
+14:09:51   GetCfgDataBool: rollb_wiref_on = FALSE
+14:09:51   GetCfgDataBool: ignition_on = FALSE
+14:09:51   GetCfgDataBool: heat_on = FALSE
+14:09:51   GetCfgDataBool: heat_as_time = FALSE
+14:09:51   GetCfgDataBool: override_on = TRUE
+14:09:51   GetCfgDataNum: ign_timeout = 0.9
+14:09:51   GetCfgDataNum: arc_ok_delay = 0.2
+14:09:51   GetCfgDataBool: autoinhib_on = TRUE
+14:09:51   GetCfgDataBool: Welder_ROB = TRUE
+14:09:51   GetCfgDataNum: weld_off_timeout = 10
+14:09:51   GetCfgDataNum: FeedDistTime = 0.33
+14:09:51   GetCfgDataBool: welder_ready_superv = FALSE
+14:09:51 T_ROB1:pConfEqIO_DI:-->Logging DI Signals
+14:09:51   GetCfgDataStr: StopProc = 
+14:09:51   GetCfgDataStr: ArcEst = 
+14:09:51   GetCfgDataStr: WeldOk = 
+14:09:51   GetCfgDataStr: WelderReady = 
+14:09:51   GetCfgDataStr: WaterOk = 
+14:09:51   GetCfgDataStr: WirefeedOk = 
+14:09:51   GetCfgDataStr: GasOk = 
+14:09:51   GetCfgDataStr: GunOk = 
+14:09:51   GetCfgDataStr: WirestickErr = 
+14:09:51   GetCfgDataStr: ManFeedInput = 
+14:09:51   GetCfgDataStr: WeldInhib = 
+14:09:51   GetCfgDataStr: WeaveInhib = 
+14:09:51   GetCfgDataStr: TrackInhib = 
+14:09:51   GetCfgDataStr: SupervInhib = 
+14:09:51   GetCfgDataStr: VoltageOk = 
+14:09:51   GetCfgDataStr: CurrentOk = 
+14:09:51   GetCfgDataStr: USERIO1 = 
+14:09:51   GetCfgDataStr: USERIO2 = 
+14:09:51   GetCfgDataStr: USERIO3 = 
+14:09:51   GetCfgDataStr: USERIO4 = 
+14:09:51   GetCfgDataStr: USERIO5 = 
+14:09:51 T_ROB1:pConfEqIO_DO:-->Logging DO Signals
+14:09:51   GetCfgDataStr: GasOn = 
+14:09:51   GetCfgDataStr: WeldOn = 
+14:09:51   GetCfgDataStr: FeedOn = 
+14:09:51   GetCfgDataStr: AWError = 
+14:09:51   GetCfgDataStr: FeedOnBwd = 
+14:09:51   GetCfgDataStr: SchedStrobe = 
+14:09:51   GetCfgDataStr: ProcessStopped = 
+14:09:51   GetCfgDataStr: SupervArc = 
+14:09:51   GetCfgDataStr: SupervVolt = 
+14:09:51   GetCfgDataStr: SupervCurrent = 
+14:09:51   GetCfgDataStr: SupervWater = 
+14:09:51   GetCfgDataStr: SupervGas = 
+14:09:51   GetCfgDataStr: SupervFeed = 
+14:09:51   GetCfgDataStr: SupervGun = 
+14:09:51   GetCfgDataStr: AWBlock = 
+14:09:51   GetCfgDataStr: WelderReady = 
+14:09:51   GetCfgDataStr: RobotReady = 
+14:09:51 T_ROB1:pConfEqIO_AO:-->Logging AO Signals
+14:09:51   GetCfgDataStr: VoltReference = 
+14:09:51   GetCfgDataStr: FeedReference = 
+14:09:51   GetCfgDataStr: CurrentReference = 
+14:09:51   GetCfgDataStr: VoltReference2 = 
+14:09:51   GetCfgDataStr: FeedReference2 = 
+14:09:51   GetCfgDataStr: ControlPort = 
+14:09:51   GetCfgDataStr: ControlPort2 = 
+14:09:51 T_ROB1:pConfEqIO_AI:-->Logging AI Signals
+14:09:51   GetCfgDataStr: VoltageMeas = 
+14:09:51   GetCfgDataStr: CurrentMeas = 
+14:09:51 T_ROB1:pConfEqIO_GO:-->Logging GO Signals
+14:09:51   GetCfgDataStr: SchedulePort = 
+14:09:51   GetCfgDataStr: ModePort = 
+14:09:51 Loaded: ARC:/WeldEquip/Code/awEquipSTD.modx
+14:09:51 T_ROB1:pInitArcProc:nActWeldSys:ARC1
+14:09:51   GetCfgDataBool: ind_rob_prop_on = FALSE
+14:09:51 T_ROB1:pSetupSys:-->System Parameters
+14:09:51   GetCfgDataStr: use_arc_sys_prop = ARC1
+14:09:51   GetCfgDataStr: use_arc_err_hndl = default
+14:09:51   GetCfgDataStr: units = SI_UNITS
+14:09:51   GetCfgDataBool: restart_on = FALSE
+14:09:51   GetCfgDataNum: restart_dist = 0
+14:09:51   GetCfgDataNum: no_of_retries = 0
+14:09:51   GetCfgDataBool: scrape_on = FALSE
+14:09:51   GetCfgDataBool: scrape_opt_on = FALSE
+14:09:51   GetCfgDataNum: scrape_width = 5
+14:09:51   GetCfgDataNum: scrape_dir = 0
+14:09:51   GetCfgDataNum: scrape_cy_time = 0.5
+14:09:51   GetCfgDataBool: ign_mov_delay_on = FALSE
+14:09:51   GetCfgDataNum: MotionTimeout = 1
+14:09:51   GetCfgDataBool: weavesync_on = FALSE
+14:09:51 T_ROB1:pSetupSysMMSync-->System Parameters
+14:09:51   GetCfgDataStr: use_arc_sys_prop = ARC1
+14:09:51   GetCfgDataNum: restart_dist = 0
+14:09:51   GetCfgDataNum: no_of_retries = 0
+14:09:51   GetCfgDataBool: scrape_on = FALSE
+14:09:51   GetCfgDataBool: scrape_opt_on = FALSE
+14:09:51   GetCfgDataNum: scrape_width = 5
+14:09:51   GetCfgDataNum: scrape_dir = 0
+14:09:51   GetCfgDataNum: scrape_cy_time = 0.5
+14:09:51 T_ROB1:pSetupEQSig:ARC1_EQUIP_T_ROB1
+14:09:51   GetCfgDataStr: use_arc_equip_prop = ARC1_stdIO_T_ROB1
+14:09:51   GetCfgDataStr: use_arc_equip_io_di = stdIO_T_ROB1
+14:09:51   GetCfgDataStr: use_arc_equip_io_do = stdIO_T_ROB1
+14:09:51   GetCfgDataStr: use_arc_equip_io_ao = stdIO_T_ROB1
+14:09:51   GetCfgDataStr: use_arc_equip_io_ai = stdIO_T_ROB1
+14:09:51   GetCfgDataStr: use_arc_equip_io_go = stdIO_T_ROB1
+14:09:51 T_ROB1:pConfEqProp:-->Logging Equipment Properties
+14:09:51   GetCfgDataBool: precond_on = FALSE
+14:09:51   GetCfgDataNum: arc_preset = 0.05
+14:09:51   GetCfgDataNum: schedport_type = 0
+14:09:51   GetCfgDataBool: fill_on = FALSE
+14:09:51   GetCfgDataBool: burnback_on = FALSE
+14:09:51   GetCfgDataBool: burnb_volt_on = FALSE
+14:09:51   GetCfgDataBool: rollback_on = FALSE
+14:09:51   GetCfgDataBool: rollb_wiref_on = FALSE
+14:09:51   GetCfgDataBool: ignition_on = FALSE
+14:09:51   GetCfgDataBool: heat_on = FALSE
+14:09:51   GetCfgDataBool: heat_as_time = FALSE
+14:09:51   GetCfgDataBool: override_on = TRUE
+14:09:51   GetCfgDataNum: ign_timeout = 0.9
+14:09:51   GetCfgDataNum: arc_ok_delay = 0.2
+14:09:51   GetCfgDataBool: autoinhib_on = TRUE
+14:09:51   GetCfgDataBool: Welder_ROB = TRUE
+14:09:51   GetCfgDataNum: weld_off_timeout = 10
+14:09:51   GetCfgDataNum: FeedDistTime = 0.33
+14:09:51   GetCfgDataBool: welder_ready_superv = FALSE
+14:09:51 T_ROB1:pConfEqIO_DI:-->Logging DI Signals
+14:09:51   GetCfgDataStr: StopProc = 
+14:09:51   GetCfgDataStr: ArcEst = 
+14:09:51   GetCfgDataStr: WeldOk = 
+14:09:51   GetCfgDataStr: WelderReady = 
+14:09:51   GetCfgDataStr: WaterOk = 
+14:09:51   GetCfgDataStr: WirefeedOk = 
+14:09:51   GetCfgDataStr: GasOk = 
+14:09:51   GetCfgDataStr: GunOk = 
+14:09:51   GetCfgDataStr: WirestickErr = 
+14:09:51   GetCfgDataStr: ManFeedInput = 
+14:09:51   GetCfgDataStr: WeldInhib = 
+14:09:51   GetCfgDataStr: WeaveInhib = 
+14:09:51   GetCfgDataStr: TrackInhib = 
+14:09:51   GetCfgDataStr: SupervInhib = 
+14:09:51   GetCfgDataStr: VoltageOk = 
+14:09:51   GetCfgDataStr: CurrentOk = 
+14:09:51   GetCfgDataStr: USERIO1 = 
+14:09:51   GetCfgDataStr: USERIO2 = 
+14:09:51   GetCfgDataStr: USERIO3 = 
+14:09:51   GetCfgDataStr: USERIO4 = 
+14:09:51   GetCfgDataStr: USERIO5 = 
+14:09:51 T_ROB1:pConfEqIO_DO:-->Logging DO Signals
+14:09:51   GetCfgDataStr: GasOn = 
+14:09:51   GetCfgDataStr: WeldOn = 
+14:09:51   GetCfgDataStr: FeedOn = 
+14:09:51   GetCfgDataStr: AWError = 
+14:09:51   GetCfgDataStr: FeedOnBwd = 
+14:09:51   GetCfgDataStr: SchedStrobe = 
+14:09:51   GetCfgDataStr: ProcessStopped = 
+14:09:51   GetCfgDataStr: SupervArc = 
+14:09:51   GetCfgDataStr: SupervVolt = 
+14:09:51   GetCfgDataStr: SupervCurrent = 
+14:09:51   GetCfgDataStr: SupervWater = 
+14:09:51   GetCfgDataStr: SupervGas = 
+14:09:51   GetCfgDataStr: SupervFeed = 
+14:09:51   GetCfgDataStr: SupervGun = 
+14:09:51   GetCfgDataStr: AWBlock = 
+14:09:51   GetCfgDataStr: WelderReady = 
+14:09:51   GetCfgDataStr: RobotReady = 
+14:09:51 T_ROB1:pConfEqIO_AO:-->Logging AO Signals
+14:09:51   GetCfgDataStr: VoltReference = 
+14:09:51   GetCfgDataStr: FeedReference = 
+14:09:51   GetCfgDataStr: CurrentReference = 
+14:09:51   GetCfgDataStr: VoltReference2 = 
+14:09:51   GetCfgDataStr: FeedReference2 = 
+14:09:51   GetCfgDataStr: ControlPort = 
+14:09:51   GetCfgDataStr: ControlPort2 = 
+14:09:51 T_ROB1:pConfEqIO_AI:-->Logging AI Signals
+14:09:51   GetCfgDataStr: VoltageMeas = 
+14:09:51   GetCfgDataStr: CurrentMeas = 
+14:09:51 T_ROB1:pConfEqIO_GO:-->Logging GO Signals
+14:09:51   GetCfgDataStr: SchedulePort = 
+14:09:51   GetCfgDataStr: ModePort = 
+14:09:51 ConfErrorHandler: ARC_ERR_HNDL default
+14:09:51   GetCfgDataBool: RepairEnabled = FALSE
+14:09:51   GetCfgDataBool: Enabled = TRUE
+14:09:51   GetCfgDataNum: DefAction = 0
+14:09:51   GetCfgDataNum: DefResumeType = 0
+14:09:51   GetCfgDataNum: MoveOutDist = 10
+14:09:51   GetCfgDataNum: PathRecSpeed = 800
+14:09:51   GetCfgDataNum: PathToolOffs = 10
+14:09:51   Result: TRUE
+14:09:51 ConfRecovMenu: ARC_RECOVERY_MENU default
+14:09:51   GetCfgDataBool: HideResumeAtErr = FALSE
+14:09:51   GetCfgDataBool: HideSkipFwd = FALSE
+14:09:51   GetCfgDataBool: HideSkipSeam = FALSE
+14:09:51   GetCfgDataBool: HideSkipPart = FALSE
+14:09:51   GetCfgDataBool: HideAbort = TRUE
+14:09:51   Result: TRUE
+14:09:51 Retries on user level(SYS_MISC):
+14:09:51   GetCfgDataNum: Value = 50
+14:09:51   Error handler configured for ARC1 = SYSTEM CHANGE =
+14:09:51 Free Program Memory: 47.644552 Mb

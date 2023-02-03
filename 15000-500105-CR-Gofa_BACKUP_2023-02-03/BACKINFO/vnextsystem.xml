@@ -1,0 +1,43 @@
+<!--XML file to hold the vNEXT configurations -->
+<vNEXT>
+  <USER name="">
+    <ProgrammableKeys>
+      <Key_1 friendlyName="Vreteno open">
+        <type>Output</type>
+        <allowInAuto>Yes</allowInAuto>
+        <pressed>PressOrRelease</pressed>
+        <target>doBi1FeedForward</target>
+      </Key_1>
+      <Key_2 friendlyName="Vreteno close">
+        <type>Output</type>
+        <allowInAuto>Yes</allowInAuto>
+        <pressed>PressOrRelease</pressed>
+        <target>DO_Vreteno_zatvor</target>
+      </Key_2>
+      <Key_3 friendlyName="Otvor">
+        <type>Output</type>
+        <allowInAuto>Yes</allowInAuto>
+        <pressed>PressOrRelease</pressed>
+        <target>ABB_Local_IO_0_DO1</target>
+      </Key_3>
+      <Key_4 friendlyName="Zatvor">
+        <type>Output</type>
+        <allowInAuto>Yes</allowInAuto>
+        <pressed>PressOrRelease</pressed>
+        <target>ABB_Local_IO_0_DO2</target>
+      </Key_4>
+    </ProgrammableKeys>
+    <BackgroundImage>
+      <location>(HOME$)/SampleImage.gif</location>
+    </BackgroundImage>
+    <BackupRestorePath>
+      <LastPath>/BACKUP</LastPath>
+    </BackupRestorePath>
+    <StartUpAppEvent>
+      <SwitchAuto Name="" />
+      <SwitchManual Name="" />
+      <SwitchManualFS Name="" />
+      <Startup Name="" />
+    </StartUpAppEvent>
+  </USER>
+</vNEXT>

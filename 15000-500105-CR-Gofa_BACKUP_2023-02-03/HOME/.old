@@ -1,0 +1,84 @@
+MODULE Module1
+    ! ## =========================================================================== ## 
+    ! MIT License
+    ! Copyright (c) 2023 Roman Parak
+    ! Permission is hereby granted, free of charge, to any person obtaining a copy
+    ! of this software and associated documentation files (the "Software"), to deal
+    ! in the Software without restriction, including without limitation the rights
+    ! to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    ! copies of the Software, and to permit persons to whom the Software is
+    ! furnished to do so, subject to the following conditions:
+    ! The above copyright notice and this permission notice shall be included in all
+    ! copies or substantial portions of the Software.
+    ! THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    ! IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    ! FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    ! AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    ! LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    ! OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    ! SOFTWARE.
+    ! ## =========================================================================== ## 
+    ! Author   : Roman Parak
+    ! Email    : Roman.Parak@outlook.com
+    ! Github   : https://github.com/rparak
+    ! File Name: T_ROB1/T_UNITY3D_ROB_TCPIP.mod
+    ! ## =========================================================================== ## 
+    
+    ! Variables for working with TCP/IP communication
+    !   Client, Server Socket Device
+    VAR socketdev rs_server_socket_dev;
+    VAR socketdev rs_client_socket_dev;
+    !   Raw bytes for receiving and sending data
+    VAR rawbytes raw_receive_str;
+    VAR rawbytes raw_send_str;
+    !   Confirmation value
+    VAR bool ok;
+    
+    ! End-effector:
+    !   Digital output data: [ID, Open, Close]
+    PERS num DO_DATA_EE_CTRL{3};
+    VAR string DO_DATA_STR;
+    !   Digital input data: [ID, Is_Open, Is_Closed]
+    PERS num DI_DATA_EE_STREAM{3};
+    VAR string DI_DATA_STR;
+
+    PROC main()  
+        ! Create a new socket for connection based-communication.
+        SocketCreate rs_server_socket_dev;
+        ! Bind a socket to an IP-address and port
+        !   Note:
+        !       IP-address: Localhost ("127.0.0.1"), Real ("192.168.125.22")
+        SocketBind rs_server_socket_dev, "127.0.0.1", 6061;
+        ! Listen for incoming connections
+        SocketListen rs_server_socket_dev;
+        
+        WHILE TRUE DO
+            ! Accept an incoming connection
+            SocketAccept rs_server_socket_dev, rs_client_socket_dev;
+            
+            ! Get the data from the Unity3D Digital-Twin {TCP/IP}
+            SocketReceive rs_client_socket_dev \RawData := raw_receive_str;
+            UnpackRawBytes raw_receive_str \Network, 1, DO_DATA_STR \UTF8Encoding:=RawBytesLen(raw_receive_str);
+            ok := StrToVal(DO_DATA_STR, DO_DATA_EE_CTRL);
+     
+            ! Send message to the Unity3D Digital-Twin {TCP/IP}
+            DI_DATA_STR := ValToStr(DI_DATA_EE_STREAM);
+            PackRawBytes DI_DATA_STR, raw_send_str \Network, 1 \UTF8Encoding;
+            SocketSend rs_client_socket_dev \RawData := raw_send_str;
+
+            ! Dispose the instance and terminate the TCP/IP connection.
+            SocketClose rs_client_socket_dev;
+            
+            ! Clear the contents of rawbytes data
+            ClearRawBytes raw_receive_str;
+            ClearRawBytes raw_send_str;
+        ENDWHILE
+        
+        ERROR
+            TPWrite "Communication timedout: TCP/IP";
+            RETRY;
+        UNDO
+            SocketClose rs_server_socket_dev;
+            SocketClose rs_client_socket_dev;
+    ENDPROC
+ENDMODULE

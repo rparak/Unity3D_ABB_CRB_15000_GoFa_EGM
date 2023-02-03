@@ -1,0 +1,221 @@
+%%%
+  VERSION: 1
+  LANGUAGE: ENGLISH
+%%%
+
+MODULE EG1_BASE (SYSMODULE, NOSTEPIN)
+ 
+ !*******************************************************************
+ ! 
+ ! Example module for testing the Discrete Application
+ !
+ ! ----------------
+ ! $Revision: 1.5 $ 
+ ! ----------------
+ ! Copyright (c) ABB Robotics Products AB 1996.  All rights reserved
+ !
+ ! Module name ..........: EG1_BASE - Application base definitions
+ !
+ ! Application name .....: EG1
+ !
+ ! Number of processes ..: 2
+ !
+ ! Name of shell routine : EG1ML 
+ !
+ 
+ LOCAL PERS num rob_no := 0;
+ !*******************************************************************
+ !
+ ! EG1ML - Application shell routine
+ !
+ ! DESCRIPTION:
+ !   Moves the manipulator to a discrete target position and executes
+ !   the two initiated processes at the same time.
+ !    
+ !
+  PROC EG1ML(robtarget ToPoint
+  			 \identno ID,
+ 	    	 speeddata Speed,
+ 	    	 num EquipNo,
+	    	 PERS tooldata Tool
+	    	 \PERS wobjdata WObj
+	    	 \switch InPos)
+
+	VAR bool found := FALSE;
+
+   	! Check if THIS task has a running process, if any kill it
+   	! (in a Multi Move System every application descriptor uses different motion planner,
+   	! "connected" processes uses the same motion planner). See EG1_sys.cfg.
+   	FOR i FROM 1 TO EG1_NOF_ROB DO
+		IF EG1_app_desc{rob_no}.MotPlan = EG1_prc_desc{i}.MotPlan
+			DaDeactProc EG1_prc_desc{i};
+   	ENDFOR
+
+   	! Activate the process/processes that are connected to THIS motion task. See EG1_sys.cfg.
+   	FOR j FROM 1 TO EG1_NOF_PROC DO
+        IF EG1_app_desc{rob_no}.MotPlan = EG1_prc_desc{j}.MotPlan AND EG1_prc_desc{j}.Active = FALSE THEN
+            found := TRUE;
+            ! Save the equipment number
+            EG1_prc_desc{j}.EquipNo := EquipNo;
+            ! Activate the first inactive process belonging to current application descriptor
+            DaActProc EG1_prc_desc{j};
+        ENDIF
+	ENDFOR 
+
+   	IF found = FALSE THEN
+     	TPWrite "No process were configured for this task. Check the configuration.";
+     	Stop;
+   	ELSE
+     	! Move to the work position and start the processes
+     	DaProcML ToPoint, Speed, Tool \WObj?WObj \InPos?InPos \ID?ID;
+   	ENDIF
+
+  BACKWARD
+    ! Perform backward actions
+    MoveL ToPoint, Speed, FINE, Tool \WObj?WObj;
+
+ ENDPROC
+ 
+!*******************************************************************
+!
+! DaCalcEvtEG1 - Discrete application calculate events for the 
+!		  application EG1.
+!
+! DESCRIPTION:
+!   RAPID user hook, calculates the event times of the process(es).
+!   This routine will be called from the DaProcML instruction to setup
+!   the process dependend trigg actions with the times defined in
+!   tool data.
+!
+ PROC DaCalcEvtEG1(num EquipNo,
+                   VAR num EventTimes{*})
+
+	VAR bool found:=FALSE;
+
+	IF EquipNo >= EG1_NOF_PROC OR EquipNo <= EG1_NOF_POS_PRC THEN
+        EventTimes{1} := EG1_tool_data{EquipNo}.time_event1;
+        EventTimes{2} := EG1_tool_data{EquipNo}.time_event2;
+        EventTimes{3} := EG1_tool_data{EquipNo}.time_event3;
+
+        found:=TRUE;
+    ENDIF
+
+    IF found = FALSE THEN
+      	ErrWrite "DaCalcEvtEG1", "found=FALSE" \RL2 := "EquipNo = " + ValToStr(EquipNo);
+    ENDIF
+
+ ENDPROC
+ 
+ 
+!*******************************************************************
+! DefAppName - Routine that sets application name.
+!
+ PROC DefAppName(INOUT string name) 
+   name := EG1_app_name;
+ ENDPROC
+
+
+ !*******************************************************************
+ !
+ ! EG1ShPowerOn - Application EG1 power on shelf routine
+ !
+ ! DESCRIPTION:
+ !   Execute the application specific power on actions.
+ !    
+ !
+ PROC EG1ShPowerOn()
+
+	! Init EG1 PERS
+   	! Get process descriptors
+   	DaGetPrcDescr EG1_prc_desc;
+   
+   	! Get application descriptor
+   	DaGetAppDescr EG1_app_desc;
+ 
+   	! Get number of processes
+   	DaGetNumOfProcs EG1_NOF_PROC;
+ 
+   	! Get number of robots (In a Multi Move System there can be more than one robot -> 
+   	! more than one application descriptor)
+   	DaGetNumOfRob EG1_NOF_ROB;
+   
+   	! Get which robot is running now (In a Multi Move System there can be more than 
+   	! one robot -> more than one application descriptor)
+   	DaGetAppIndex rob_no;
+   
+   	! Define the process data
+   	FOR j FROM 1 TO EG1_NOF_PROC DO
+     	DaDefProcData EG1_prc_desc{j}, EG1_prc_data{j}, EG1_tool_data{j}, EG1_int_data{j};
+   
+     	! Define the user data
+     	DaDefUserData EG1_prc_desc{j}, EG1_prc_time_out, DA_PROC_TIMEOUT;
+     
+	 	TEST j
+       	CASE 1:
+       		! Define the external signals
+     		DaDefExtSig EG1_prc_desc{1}, doStart1, diReady1, goProgNo1;
+	 		! Define the process signals
+     		DaDefProcSig EG1_prc_desc{1}, doInProgress1, doProcFault1, doExtFault1;
+       	CASE 2:
+       		! Define the external signals
+     		DaDefExtSig EG1_prc_desc{2}, doStart2, diReady2, goProgNo2;
+     		! Define the process signals
+	 		DaDefProcSig EG1_prc_desc{2}, doInProgress2, doProcFault2, doExtFault2;
+       	ENDTEST
+   	ENDFOR
+       
+ ENDPROC
+ 
+ 
+ !*******************************************************************
+ !
+ ! EG1ShStart - Application EG1 start shelf routine
+ !
+ ! DESCRIPTION:
+ !   Execute the application specific start actions. 
+ !    
+ !
+ PROC EG1ShStart()
+   	TPWrite "EG1ShStart";   
+ ENDPROC
+ 
+ 
+ !*******************************************************************
+ !
+ ! EG1ShReStart - Application EG1 restart shelf routine
+ !
+ ! DESCRIPTION:
+ !   Execute the application specific restart actions. 
+ !    
+ !
+ PROC EG1ShReStart()
+   	TPWrite "EG1ShReStart";      
+ ENDPROC
+ 
+ 
+ !*******************************************************************
+ !
+ ! EG1ShStop - Application EG1 stop shelf routine
+ !
+ ! DESCRIPTION:
+ !   Execute the application specific stop actions. 
+ !    
+ !
+ PROC EG1ShStop()
+   	TPWrite "EG1ShStop";      
+ ENDPROC
+ 
+ 
+ !*******************************************************************
+ !
+ ! EG1ShQStop - Application EG1 quick stop shelf routine
+ !
+ ! DESCRIPTION:
+ !   Execute the application specific quick stop actions. 
+ !    
+ !
+ PROC EG1ShQStop()
+   	TPWrite "EG1ShQStop";      
+ ENDPROC
+ 
+ENDMODULE

@@ -1,0 +1,14 @@
+The three files eg1bas.sys, eg1prc.sys and eg1tol.sys are just an example of a DAP application.
+The example shows how to use the DAP platform. The example can be loaded into the robot
+(dap/) and then executed. 
+
+The IO-configuration file eg1_eio.cfg and the program file eg1.pgf (loading eg1.mod) can be used as an example.
+
+The EIO configuration are done either by loading(Load new parameters) eg1_eio.cfg from RSO or the GTPU. 
+
+The SYS configuration are done either by loading(Load new parameters) eg1sys.cfg from RSO or the GTPU.
+If you want to configure a system for Multi Move, use the cfg file called eg1sys_mms.cfg instead.
+The RW option MultiTasking is required if theese configurations are loaded.
+
+Some texts will appear on the TP when the example executes (wrap around).
+This will help you to follow the order in which the user hooks are used.

@@ -1,0 +1,4 @@
+2022-06-07 13:20:11.357000 : EDS reader version 2.1.3
+2022-06-07 13:20:11.357000 : Namespace(stdout=False, typesfile='/products/RobotControl_7.6.0/options/enms/en_base_cfgtypes.xml', workingdir='/user/HOME/EDS')
+2022-06-07 13:20:11.357000 : Scanning /user/HOME/EDS
+2022-06-07 13:20:11.358000 : Done. Processed files []

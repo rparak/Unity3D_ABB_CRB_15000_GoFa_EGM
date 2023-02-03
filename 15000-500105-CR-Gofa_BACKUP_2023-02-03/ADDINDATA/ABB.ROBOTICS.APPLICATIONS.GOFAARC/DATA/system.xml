@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemProperties>
+  <SystemName>15000-500105-CR-Gofa</SystemName>
+  <SerialNo>15000-500105</SerialNo>
+  <UsedMedia>
+    <Media path="RobotControl_7.7.1" name="RobotControl" version="7.7.1+296" versionName="7.7.1"/>
+    <Media path="RobotOS_6.0.1" name="RobotOS" version="6.0.1+0" versionName="6.0.1"/>
+    <Media path="ASI_1.0.6" name="ASI" version="1.0.6" versionName="1.0.6"/>
+    <Media path="Apps_1.9.0" name="FlexPendantSoftwareUpdate" version="1.9.0+0" versionName="1.9.0"/>
+    <Media path="Robots_1.7.1" name="Robots" version="1.7.1+50" versionName="1.7.1"/>
+    <Media path="Wizard_1.4.2" name="Wizard" version="1.4.2" versionName="1.4.2"/>
+    <Media path="GoFaArc_1.0.0-45.Beta1" name="GoFaArc" version="1.0.0-45.Beta1+45" versionName="1.0.0-45.Beta1"/>
+  </UsedMedia>
+  <ControlModule>
+    <Option descr="Leadthrough"/>
+    <Option descr="Safe Move Plug and Play"/>
+    <Option descr="No Category 0"/>
+    <Option descr="English"/>
+    <Option descr="3101-x Absolute Accuracy"/>
+    <Option descr="3121-1 RW Add-In Prepared"/>
+    <Option descr="3100-1 Advanced Robot Motion"/>
+    <Option descr="3125-1 Continuous and Discrete Application Platform"/>
+    <Option descr="Continuous Application Platform"/>
+    <Option descr="Discrete Application Platform"/>
+    <Option descr="ASCII Log"/>
+    <Option descr="3150-1 Collision Avoidance"/>
+    <Option descr="3107-1 Collision Detection"/>
+    <Option descr="3018-1 Hot Swappable FlexPendant"/>
+    <Option descr="3029-1 DeviceNet Single Channel"/>
+    <Option descr="3024-2 EtherNet/IP Adapter"/>
+    <Option descr="3024-1 EtherNet/IP Scanner"/>
+    <Option descr="3120-2 FlexPendant Essential App Package"/>
+    <Option descr="3120-1 FlexPendant Limited App Package"/>
+    <Option descr="3151-1 FlexPendant Program Package"/>
+    <Option descr="3038-1 Force Control Interface"/>
+    <Option descr="3116-1 FTP and SFTP client"/>
+    <Option descr="3154-1 IoT Data Gateway"/>
+    <Option descr="3044-2 Keyless Mode Switch, 2 modes"/>
+    <Option descr="3114-1 Multitasking"/>
+    <Option descr="3117-1 NFS client"/>
+    <Option descr="3113-1 Path Recovery"/>
+    <Option descr="3119-1 RobotStudio Connect"/>
+    <Option descr="3043-3 SafeMove Collaborative"/>
+    <Option descr="3108-1 SoftMove"/>
+    <Option descr="3106-1 World Zones"/>
+    <Option descr="RobotControl Base"/>
+  </ControlModule>
+  <DriveModule>
+    <Name>Robot1</Name>
+    <Option descr="C30-D7 for CRB 15000"/>
+  </DriveModule>
+  <AdditionalOption>
+    <Name>ASI</Name>
+    <Option descr="ASI"/>
+  </AdditionalOption>
+  <AdditionalOption>
+    <Name>FlexPendantSoftwareUpdate</Name>
+    <Option descr="FlexPendant App Package"/>
+  </AdditionalOption>
+  <AdditionalOption>
+    <Name>Robots</Name>
+    <Option descr="CRB 15000-5/0.95"/>
+  </AdditionalOption>
+  <AdditionalOption>
+    <Name>Wizard</Name>
+    <Option descr="Wizard"/>
+  </AdditionalOption>
+  <AdditionalOption>
+    <Name>GoFaArc</Name>
+    <Option descr="xxxx-1 GoFaArc 7"/>
+    <Option descr="Standard IO welder"/>
+  </AdditionalOption>
+</SystemProperties>

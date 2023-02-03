@@ -41,7 +41,7 @@ public class EE_Ctrl : MonoBehaviour
     public GameObject finger_1, finger_2;
 
     // Other variables
-    public static readonly float velocity = 0.00003f;
+    public static readonly float velocity = 0.00006f;
     private float current_fingers_pos;
 
     // Start is called before the first frame update
@@ -58,11 +58,11 @@ public class EE_Ctrl : MonoBehaviour
             // Calculate the position between the points with the specified velocity
             if(ABB_TCP_Control.EE_Open == 1)
             {
-                current_fingers_pos = Mathf.MoveTowards(current_fingers_pos, 0.00006f, velocity * Time.deltaTime);
+                current_fingers_pos = Mathf.MoveTowards(current_fingers_pos, 0.0f, velocity * Time.deltaTime);
             }
             else if(ABB_TCP_Control.EE_Close == 1)
             {
-                current_fingers_pos = Mathf.MoveTowards(current_fingers_pos, 0.0f, velocity * Time.deltaTime);
+                current_fingers_pos = Mathf.MoveTowards(current_fingers_pos, 0.00006f, velocity * Time.deltaTime);
             }
 
             // Transformation of the fingers depending on the previous calculation
