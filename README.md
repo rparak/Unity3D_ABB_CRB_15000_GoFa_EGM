@@ -68,6 +68,10 @@ Link: [Protobuf Code Generator and Parser](https://protogen.marcgravell.com)
 ## Project Hierarchy:
 
 ```bash
+[/15000-500105-CR-Gofa_BACKUP_2023-02-03/]
+Description:
+  Backup from real robot CRB 15000 (GoFa).
+  
 [/CAD/]
 Description:
   3D models of the individual parts of the robot and the end-effector.
