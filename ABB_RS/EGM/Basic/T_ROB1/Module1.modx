@@ -98,7 +98,7 @@ MODULE Module1
         
         ERROR
         IF ERRNO = ERR_UDPUC_COMM THEN
-            TPWrite "Communication timedout: EGM";
+            TPWrite "Communication timeout: EGM";
             TRYNEXT;
         ENDIF
     ENDPROC
