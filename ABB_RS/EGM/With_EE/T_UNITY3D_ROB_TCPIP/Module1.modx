@@ -75,7 +75,7 @@ MODULE Module1
         ENDWHILE
         
         ERROR
-            TPWrite "Communication timedout: TCP/IP";
+            TPWrite "Communication timeout: TCP/IP";
             TRYNEXT;
         UNDO
             SocketClose rs_server_socket_dev;
