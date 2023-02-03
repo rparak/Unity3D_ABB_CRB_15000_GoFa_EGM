@@ -54,7 +54,7 @@ MODULE Module1
     PROC main()
         ! Adjust the right end-effector of the robot arm.
         !   1\ Without EE: tool0
-        !       Example: MoveL Target_Auxiliary,v100,fine,CONST_EE_TOOL_EGP_C_40\WObj:=wobj0;
+        !       Example: MoveL Target_Auxiliary,v100,fine,tool0\WObj:=wobj0;
         !   2\ Schunk EE: CONST_EE_TOOL_EGP_C_40
         !       Example: MoveL Target_Auxiliary,v100,fine,CONST_EE_TOOL_EGP_C_40\WObj:=wobj0;
 
