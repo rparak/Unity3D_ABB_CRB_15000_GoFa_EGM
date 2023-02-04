@@ -65,7 +65,7 @@ public class UI_Ctrl : MonoBehaviour
     // Other variables
     private double[] C_Orientation_tmp = new double[3];
     private static readonly double[] C_Orientation_Offset = new double[3] { 180.0, 0.0, 180.0};
-    private static readonly float smooth_time = 0.5f;
+    private static readonly float smooth_time = 0.1f;
 
     // Start is called before the first frame update
     void Start()

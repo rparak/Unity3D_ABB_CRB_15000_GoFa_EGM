@@ -110,6 +110,7 @@ Description:
   <img src="https://github.com/rparak/Unity3D_ABB_CRB_15000_EGM/blob/main/images/Unity3D_App_GoFa_2.png" width="800" height="500">
   <img src="https://github.com/rparak/Unity3D_ABB_CRB_15000_EGM/blob/main/images/Unity3D_App_GoFa_3.png" width="800" height="500">
   <img src="https://github.com/rparak/Unity3D_ABB_CRB_15000_EGM/blob/main/images/Unity3D_App_GoFa_4.png" width="800" height="500">
+  <img src="https://github.com/rparak/Unity3D_ABB_CRB_15000_EGM/blob/main/images/Unity3D_App_GoFa_5.png" width="800" height="500">
 </p>
 
 **Real-World Test:**
