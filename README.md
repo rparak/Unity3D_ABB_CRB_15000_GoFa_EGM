@@ -68,7 +68,7 @@ Link: [Protobuf Code Generator and Parser](https://protogen.marcgravell.com)
 **ABB RobotStudio Station Logic : Control of the potential end-effector (SCHUNK in our case)**
 
 <p align="center">
-  <img src="https://github.com/rparak/Unity3D_ABB_CRB_15000_EGM/blob/main/images/ABB_RobotStudio_2.png" width="800" height="500">
+  <img src="https://github.com/rparak/Unity3D_ABB_CRB_15000_EGM/blob/main/images/ABB_RobotStudio_2.png" width="800" height="200">
 </p>
 
 ## Project Hierarchy:
