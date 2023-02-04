@@ -62,7 +62,13 @@ Link: [Protobuf Code Generator and Parser](https://protogen.marcgravell.com)
 6. In the Ready to unpack page, review the information and then click Finish.
 
 <p align="center">
-<img src="https://github.com/rparak/Unity3D_ABB_CRB_15000_EGM/blob/main/images/ABB_RobotStudio_1.png" width="800" height="500">
+  <img src="https://github.com/rparak/Unity3D_ABB_CRB_15000_EGM/blob/main/images/ABB_RobotStudio_1.png" width="800" height="500">
+</p>
+
+**ABB RobotStudio Station Logic : Control of the potential end-effector (SCHUNK in our case)**
+
+<p align="center">
+  <img src="https://github.com/rparak/Unity3D_ABB_CRB_15000_EGM/blob/main/images/ABB_RobotStudio_2.png" width="800" height="500">
 </p>
 
 ## Project Hierarchy:
