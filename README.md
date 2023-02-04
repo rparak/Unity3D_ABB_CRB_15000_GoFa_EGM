@@ -24,6 +24,8 @@ Universal Windows Platform, Android
 
 The project focuses on a simple demonstration of client-server communication via User Datagram Protocol (UDP), which is implemented in Unity3D. More precisely, it is the control of the robot by EGM (Externally Guided Motion). The main idea is to control the Tool Center Point (TCP) of the robot (Translation, Rotation - Quaternion / Euler Angles) and collect data from the ABB into the Unity3D simulation to visualize the robot motion. An additional feature of the project is the control of the SCHUNK end-effector via TCP/IP, which is also implemented in Unity3D.
 
+**WARNING: RobotWare version 7.6.1 or lower must be used.**
+
 The 3D parts of the robot were downloaded from the official ABB website here: [ABB Library](https://library.abb.com/)
 
 The 3D model of the end-effector were downloaded from the official SCHUNK website here: [SCHUNK Co-act EGP-C 40-N-N-GoFa](https://schunk.com/vn/en/gripping-systems/parallel-gripper/co-act-egp-c/co-act-egp-c-40-n-n-gofa/p/000000000001468548)
@@ -31,8 +33,6 @@ The 3D model of the end-effector were downloaded from the official SCHUNK websit
 This solution can be used to control a real robot or to simulate one. The Unity3D Digital-Twin application has been tested on the ABB CRB GoFa robotic arm, both on real hardware and in simulation.
 
 The application can be installed on a mobile phone, tablet or computer, but for communication with the robot it is necessary to be in the same network. The application uses performance optimization using multi-threaded programming. The High Definition Render Pipeline (HDRP) technology has been used for better graphics.
-
-**WARNING: RobotWare version 7.6.1 or lower must be used.**
 
 The project was realized at the Institute of Automation and Computer Science, Brno University of Technology, Faculty of Mechanical Engineering (NETME Centre - Cybernetics and Robotics Division) in cooperation with Novota Art.
 
