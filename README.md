@@ -116,7 +116,7 @@ Description:
 
 <p align="center">
   <img src="https://github.com/rparak/Unity3D_ABB_CRB_15000_EGM/blob/main/images/GoFa_1.png" width="250" height="450">
-  <img src="https://github.com/rparak/Unity3D_ABB_CRB_15000_EGM/blob/main/images/GoFa_TV.png" width="700" height="450">
+  <img src="https://github.com/rparak/Unity3D_ABB_CRB_15000_EGM/blob/main/images/GoFa_2.png" width="250" height="450">
 </p>
 
 ## Result:
