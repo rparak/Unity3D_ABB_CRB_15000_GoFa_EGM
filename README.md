@@ -48,7 +48,7 @@ The project was realized at the Institute of Automation and Computer Science, Br
 | TCP/IP | 6061 |
 | UDPUC | 6511  |
 
-**WARNING: To control the robot in the real world, you need to turn off the firewall.**
+**WARNING: To control the robot in the real world, it is necessary to disable the firewall.**
 
 **Notes:**
 
