@@ -34,7 +34,7 @@ The application can be installed on a mobile phone, tablet or computer, but for 
 
 **WARNING: RobotWare version 7.6.1 or lower must be used.**
 
-The project was realized at the Institute of Automation and Computer Science, Brno University of Technology, Faculty of Mechanical Engineering (NETME Centre - Cybernetics and Robotics Division) in cooperation with Novota-Art.
+The project was realized at the Institute of Automation and Computer Science, Brno University of Technology, Faculty of Mechanical Engineering (NETME Centre - Cybernetics and Robotics Division) in cooperation with Novota Art.
 
 **Notes:**
 
