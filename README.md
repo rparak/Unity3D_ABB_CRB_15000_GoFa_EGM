@@ -115,7 +115,7 @@ Description:
 **Real-World Test:**
 
 <p align="center">
-  <img src="https://github.com/rparak/Unity3D_ABB_CRB_15000_EGM/blob/main/images/GoFa_1.png" width="500" height="250">
+  <img src="https://github.com/rparak/Unity3D_ABB_CRB_15000_EGM/blob/main/images/GoFa_1.png" width="250" height="500">
   <img src="https://github.com/rparak/Unity3D_ABB_CRB_15000_EGM/blob/main/images/GoFa_TV.png" width="700" height="450">
 </p>
 
