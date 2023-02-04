@@ -127,7 +127,7 @@ Description:
 </p>
 
 <p align="center">
-  <img src="https://github.com/rparak/Unity3D_ABB_CRB_15000_EGM/blob/main/images/GoFa_TV.png" width="800" height="500">
+  <img src="https://github.com/rparak/Unity3D_ABB_CRB_15000_EGM/blob/main/images/GoFa_TV.png" width="700" height="500">
 </p>
 
 ## Result:
